@@ -13,6 +13,7 @@ const navLinks = [
 export default function FrontNavbar({ variant = 'transparent', activePath = null }) {
     const isSolid = variant === 'solid';
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         setMenuOpen(false);
@@ -51,17 +52,20 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
 
         const onScroll = () => {
             if (isSolid) {
+                const solidScrolled = window.scrollY > 20;
+                setScrolled(solidScrolled);
                 header.style.background = '';
-                header.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(20,17,15,.08)' : 'none';
+                header.style.boxShadow = solidScrolled ? '0 2px 20px rgba(20,17,15,.08)' : 'none';
                 header.style.borderBottom = '';
                 return;
             }
 
-            const scrolled = window.scrollY > 80 || menuOpen;
-            header.style.background = scrolled ? '#F6F2EC' : 'transparent';
-            header.style.boxShadow = scrolled ? '0 1px 20px rgba(20,17,15,.08)' : 'none';
-            header.style.borderBottom = scrolled ? '1px solid rgba(20,17,15,.12)' : 'none';
-            applyNavColors(scrolled);
+            const isScrolled = window.scrollY > 80 || menuOpen;
+            setScrolled(isScrolled);
+            header.style.background = isScrolled ? '#F6F2EC' : 'transparent';
+            header.style.boxShadow = isScrolled ? '0 1px 20px rgba(20,17,15,.08)' : 'none';
+            header.style.borderBottom = isScrolled ? '1px solid rgba(20,17,15,.12)' : 'none';
+            applyNavColors(isScrolled);
         };
 
         onScroll();
@@ -122,7 +126,7 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
     return (
         <header
             id="qw-header"
-            className={`front-header${isSolid ? ' front-header--solid' : ''}${menuOpen ? ' menu-open' : ''}`}
+            className={`front-header${isSolid ? ' front-header--solid' : ''}${scrolled || menuOpen ? ' front-header--scrolled' : ''}${menuOpen ? ' menu-open' : ''}`}
             style={{
                 position: 'fixed',
                 top: 0,

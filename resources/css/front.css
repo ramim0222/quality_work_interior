@@ -101,6 +101,7 @@
 }
 
 .qw-front .front-header--solid .front-navbar-toggle-bar,
+.qw-front .front-header--scrolled .front-navbar-toggle-bar,
 .qw-front .front-header.menu-open .front-navbar-toggle-bar {
     background: var(--text);
 }
@@ -314,8 +315,13 @@
         display: none;
     }
 
+    .qw-front .front-navbar-badge {
+        margin-right: 0;
+    }
+
     .qw-front .front-navbar-toggle {
         display: flex;
+        margin-left: auto;
     }
 
     .qw-front .front-navbar-mobile {
