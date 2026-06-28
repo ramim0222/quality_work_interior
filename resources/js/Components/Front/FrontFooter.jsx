@@ -25,28 +25,13 @@ const companyLinks = [
 
 export default function FrontFooter() {
     return (
-        <footer style={{ background: 'var(--ink)', padding: '80px 0 40px', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(176,137,79,.14)' }}>
-            <div style={{
-                position: 'absolute',
-                bottom: -48,
-                right: -16,
-                fontFamily: "'Fraunces',serif",
-                fontSize: 180,
-                fontWeight: 400,
-                color: 'rgba(246,242,236,.022)',
-                whiteSpace: 'nowrap',
-                lineHeight: 1,
-                pointerEvents: 'none',
-                userSelect: 'none',
-                letterSpacing: '-.025em',
-                fontOpticalSizing: 'auto',
-            }}
-            >
+        <footer className="front-footer" style={{ background: 'var(--ink)', padding: '80px 0 40px', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(176,137,79,.14)' }}>
+            <div className="footer-watermark">
                 Quality Work
             </div>
             <div className="qw-container" style={{ position: 'relative' }}>
-                <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1.1fr .72fr 1fr', gap: 56, paddingBottom: 56, borderBottom: '1px solid var(--line-dark)' }}>
-                    <div>
+                <div className="footer-grid">
+                    <div className="footer-brand">
                         <div style={{ fontFamily: "'Fraunces',serif", fontWeight: 400, fontSize: '1.2rem', color: 'var(--text-onDark)', letterSpacing: '-.015em', marginBottom: 12, fontOpticalSizing: 'auto' }}>
                             Quality Work Interior
                         </div>
@@ -65,9 +50,9 @@ export default function FrontFooter() {
                             </a>
                         </div>
                     </div>
-                    <div>
+                    <div className="footer-col footer-col-services">
                         <div style={{ fontFamily: "'Inter',sans-serif", fontSize: '.6rem', fontWeight: 700, color: 'rgba(246,242,236,.26)', letterSpacing: '.18em', textTransform: 'uppercase', marginBottom: 16 }}>Services</div>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                        <div className="footer-link-list" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                             {serviceLinks.map((link) => (
                                 <Link key={link.href} href={link.href} style={{ fontFamily: "'Inter',sans-serif", fontSize: '.79rem', color: 'rgba(246,242,236,.42)' }}>
                                     {link.label}
@@ -75,7 +60,7 @@ export default function FrontFooter() {
                             ))}
                         </div>
                     </div>
-                    <div>
+                    <div className="footer-col">
                         <div style={{ fontFamily: "'Inter',sans-serif", fontSize: '.6rem', fontWeight: 700, color: 'rgba(246,242,236,.26)', letterSpacing: '.18em', textTransform: 'uppercase', marginBottom: 16 }}>Company</div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                             {companyLinks.map((link) => (
@@ -85,7 +70,7 @@ export default function FrontFooter() {
                             ))}
                         </div>
                     </div>
-                    <div>
+                    <div className="footer-col">
                         <div style={{ fontFamily: "'Inter',sans-serif", fontSize: '.6rem', fontWeight: 700, color: 'rgba(246,242,236,.26)', letterSpacing: '.18em', textTransform: 'uppercase', marginBottom: 16 }}>Contact</div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                             <div>
@@ -107,11 +92,11 @@ export default function FrontFooter() {
                         </div>
                     </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 24, flexWrap: 'wrap', gap: 12 }}>
+                <div className="footer-bottom">
                     <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '.7rem', color: 'rgba(246,242,236,.2)' }}>
                         © 2025 Quality Work Interior Pte. Ltd. · UEN 202531526C
                     </p>
-                    <div style={{ display: 'flex', gap: 18 }}>
+                    <div className="footer-bottom-links">
                         <Link href="/privacy" style={{ fontFamily: "'Inter',sans-serif", fontSize: '.7rem', color: 'rgba(246,242,236,.2)' }}>Privacy</Link>
                         <Link href="/terms" style={{ fontFamily: "'Inter',sans-serif", fontSize: '.7rem', color: 'rgba(246,242,236,.2)' }}>Terms</Link>
                     </div>

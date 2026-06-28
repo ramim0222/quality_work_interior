@@ -28,6 +28,10 @@ Route::get('/about', function () {
     return Inertia::render('Front/About');
 });
 
+Route::get('/contact', function () {
+    return Inertia::render('Front/Contact');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

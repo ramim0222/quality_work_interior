@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import WhatsAppIcon from '@/Components/icons/WhatsAppIcon';
 
@@ -12,28 +12,28 @@ const navLinks = [
 
 export default function FrontNavbar({ variant = 'transparent', activePath = null }) {
     const isSolid = variant === 'solid';
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [activePath]);
+
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
+    }, [menuOpen]);
 
     useEffect(() => {
         const header = document.getElementById('qw-header');
         if (!header) return;
 
-        const onScroll = () => {
-            if (isSolid) {
-                header.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(20,17,15,.08)' : 'none';
-                return;
-            }
-
-            const scrolled = window.scrollY > 80;
-            header.style.background = scrolled ? '#F6F2EC' : 'transparent';
-            header.style.boxShadow = scrolled ? '0 1px 20px rgba(20,17,15,.08)' : 'none';
-            header.style.borderBottom = scrolled ? '1px solid rgba(20,17,15,.12)' : 'none';
-
+        const applyNavColors = (scrolled) => {
             const logo = document.getElementById('header-logo');
             const phone = document.getElementById('header-phone');
             if (logo) logo.style.color = scrolled ? '#14110F' : '#F6F2EC';
             if (phone) phone.style.color = scrolled ? '#6B635A' : 'rgba(246,242,236,.38)';
 
-            header.querySelectorAll('nav [data-nav]').forEach((el) => {
+            header.querySelectorAll('[data-nav]').forEach((el) => {
                 const isActive = el.dataset.active === 'true';
                 if (scrolled) {
                     el.style.color = isActive ? '#14110F' : 'rgba(20,17,15,.55)';
@@ -49,6 +49,21 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
             });
         };
 
+        const onScroll = () => {
+            if (isSolid) {
+                header.style.background = '';
+                header.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(20,17,15,.08)' : 'none';
+                header.style.borderBottom = '';
+                return;
+            }
+
+            const scrolled = window.scrollY > 80 || menuOpen;
+            header.style.background = scrolled ? '#F6F2EC' : 'transparent';
+            header.style.boxShadow = scrolled ? '0 1px 20px rgba(20,17,15,.08)' : 'none';
+            header.style.borderBottom = scrolled ? '1px solid rgba(20,17,15,.12)' : 'none';
+            applyNavColors(scrolled);
+        };
+
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => {
@@ -60,17 +75,27 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
             const phone = document.getElementById('header-phone');
             if (logo) logo.style.color = '';
             if (phone) phone.style.color = '';
-            header.querySelectorAll('nav [data-nav]').forEach((el) => {
+            header.querySelectorAll('[data-nav]').forEach((el) => {
                 el.style.color = '';
                 el.style.fontWeight = '';
                 el.style.borderBottom = '';
                 el.style.paddingBottom = '';
             });
         };
-    }, [isSolid, activePath]);
+    }, [isSolid, activePath, menuOpen]);
 
-    const navStyle = (href) => {
+    const navStyle = (href, mobile = false) => {
         const isActive = activePath === href;
+        if (mobile) {
+            return {
+                fontFamily: "'Inter',sans-serif",
+                fontSize: '1rem',
+                color: isActive ? 'var(--text)' : 'var(--text-muted)',
+                fontWeight: isActive ? 600 : 500,
+                borderLeft: isActive ? '3px solid var(--brass)' : '3px solid transparent',
+                paddingLeft: 16,
+            };
+        }
         if (isSolid) {
             return {
                 fontFamily: "'Inter',sans-serif",
@@ -92,9 +117,12 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
         };
     };
 
+    const closeMenu = () => setMenuOpen(false);
+
     return (
         <header
             id="qw-header"
+            className={`front-header${isSolid ? ' front-header--solid' : ''}${menuOpen ? ' menu-open' : ''}`}
             style={{
                 position: 'fixed',
                 top: 0,
@@ -106,41 +134,18 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
                 transition: 'background .35s, box-shadow .35s, border-bottom .35s',
             }}
         >
-            <div className="qw-container" style={{ display: 'flex', alignItems: 'center', height: 80, gap: 0 }}>
+            <div className="qw-container front-navbar-inner">
                 <Link
                     href="/"
                     id="header-logo"
-                    style={{
-                        fontFamily: "'Fraunces',serif",
-                        fontWeight: 400,
-                        fontSize: '1.25rem',
-                        color: isSolid ? 'var(--text)' : 'var(--text-onDark)',
-                        letterSpacing: '-.015em',
-                        flexShrink: 0,
-                        marginRight: 16,
-                        transition: 'color .3s',
-                        fontOpticalSizing: 'auto',
-                    }}
+                    className="front-navbar-logo"
+                    onClick={closeMenu}
                 >
                     Quality Work
                 </Link>
-                <span style={{
-                    fontFamily: "'Inter',sans-serif",
-                    fontSize: '.58rem',
-                    fontWeight: 700,
-                    color: 'var(--brass)',
-                    letterSpacing: '.18em',
-                    textTransform: 'uppercase',
-                    border: '1px solid rgba(176,137,79,.45)',
-                    borderRadius: 999,
-                    padding: '3px 9px',
-                    flexShrink: 0,
-                    marginRight: 'auto',
-                }}
-                >
-                    24/7
-                </span>
-                <nav style={{ display: 'flex', gap: 28, alignItems: 'center', marginRight: 40 }}>
+                <span className="front-navbar-badge">24/7</span>
+
+                <nav className="front-navbar-desktop">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
@@ -153,44 +158,61 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
                         </Link>
                     ))}
                 </nav>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexShrink: 0 }}>
+
+                <div className="front-navbar-actions">
                     <a
                         id="header-phone"
                         data-nav
                         href="tel:+6598683650"
-                        style={{
-                            fontFamily: "'Inter',sans-serif",
-                            fontSize: '.78rem',
-                            color: isSolid ? 'var(--text-muted)' : 'rgba(246,242,236,.38)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 6,
-                            transition: 'color .3s',
-                        }}
+                        className="front-navbar-phone"
                     >
                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.22a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
                         </svg>
-                        9868 3650
+                        <span className="front-navbar-phone-text">9868 3650</span>
                     </a>
-                    <a
-                        href="https://wa.me/6598683650"
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: 7,
-                            background: 'var(--brass)',
-                            color: '#FFF8EE',
-                            fontFamily: "'Inter',sans-serif",
-                            fontWeight: 600,
-                            fontSize: '.78rem',
-                            padding: '9px 20px',
-                            borderRadius: 999,
-                            letterSpacing: '.015em',
-                        }}
-                    >
+                    <a href="https://wa.me/6598683650" className="front-navbar-wa-btn">
                         <WhatsAppIcon size={13} color="#FFF8EE" />
-                        WhatsApp Us
+                        <span className="front-navbar-wa-text">WhatsApp Us</span>
+                    </a>
+                </div>
+
+                <button
+                    type="button"
+                    className="front-navbar-toggle"
+                    aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                    aria-expanded={menuOpen}
+                    onClick={() => setMenuOpen((open) => !open)}
+                >
+                    <span className={`front-navbar-toggle-bar${menuOpen ? ' open' : ''}`} />
+                    <span className={`front-navbar-toggle-bar${menuOpen ? ' open' : ''}`} />
+                    <span className={`front-navbar-toggle-bar${menuOpen ? ' open' : ''}`} />
+                </button>
+            </div>
+
+            <div className={`front-navbar-mobile${menuOpen ? ' open' : ''}`} aria-hidden={!menuOpen}>
+                <nav className="front-navbar-mobile-nav">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            data-nav
+                            data-active={activePath === link.href ? 'true' : 'false'}
+                            href={link.href}
+                            style={navStyle(link.href, true)}
+                            onClick={closeMenu}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
+                <div className="front-navbar-mobile-actions">
+                    <a href="tel:+6598683650" className="front-navbar-mobile-phone" onClick={closeMenu}>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.22a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
+                        Call 9868 3650
+                    </a>
+                    <a href="https://wa.me/6598683650" className="front-navbar-mobile-wa" onClick={closeMenu}>
+                        <WhatsAppIcon size={16} color="#fff" />
+                        WhatsApp Us Now
                     </a>
                 </div>
             </div>
