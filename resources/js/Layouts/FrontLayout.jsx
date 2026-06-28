@@ -2,6 +2,7 @@ import { Head } from '@inertiajs/react';
 import FrontNavbar from '@/Components/Front/FrontNavbar';
 import FrontFooter from '@/Components/Front/FrontFooter';
 import FrontScrollRefresh from '@/Components/Front/FrontScrollRefresh';
+import FrontFloatingActions from '@/Components/Front/FrontFloatingActions';
 import '../../css/front.css';
 
 export default function FrontLayout({
@@ -26,6 +27,7 @@ export default function FrontLayout({
             {scrollRefresh && <FrontScrollRefresh />}
             <main {...mainProps}>{children}</main>
             <FrontFooter />
+            <FrontFloatingActions />
         </div>
     );
 }

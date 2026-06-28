@@ -57,6 +57,8 @@ export default function ProcessSection() {
                 <div style={{ textAlign: 'center', marginTop: 60 }}>
                     <a
                         href="https://wa.me/6598683650?text=I'd%20like%20to%20start%20a%20project"
+                        target="_blank"
+                        rel="noreferrer"
                         style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--ink)', color: 'var(--text-onDark)', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.875rem', padding: '13px 26px', borderRadius: 999 }}
                     >
                         Start Your Project Today

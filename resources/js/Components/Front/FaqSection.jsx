@@ -21,6 +21,8 @@ export default function FaqSection() {
                         </p>
                         <a
                             href="https://wa.me/6598683650"
+                            target="_blank"
+                            rel="noreferrer"
                             style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.83rem', padding: '11px 22px', borderRadius: 999 }}
                         >
                             <WhatsAppIcon size={14} color="#fff" />

@@ -45,7 +45,7 @@ export default function ContactSidebarSection() {
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                         {contactAgents.map((agent) => (
-                            <a key={agent.name} href={agent.wa} className="contact-agent-row">
+                            <a key={agent.name} href={agent.wa} target="_blank" rel="noreferrer" className="contact-agent-row">
                                 <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--paper-2)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Fraunces',serif", fontSize: '.92rem', color: 'var(--brass)', fontOpticalSizing: 'auto' }}>{agent.initials}</div>
                                 <div style={{ flex: 1 }}>
                                     <div style={{ fontFamily: "'Inter',sans-serif", fontSize: '.82rem', fontWeight: 600, color: 'var(--text)' }}>{agent.name}</div>

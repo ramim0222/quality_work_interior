@@ -45,6 +45,8 @@ export default function ServiceDetailHeroSection({ service }) {
                     <div style={{ display: 'flex', gap: 11, alignItems: 'center', flexWrap: 'wrap', animation: 'fadeUp .8s .65s both' }}>
                         <a
                             href={service.waLink}
+                            target="_blank"
+                            rel="noreferrer"
                             style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.88rem', padding: '13px 24px', borderRadius: 999 }}
                         >
                             <WhatsAppIcon size={15} color="#fff" />

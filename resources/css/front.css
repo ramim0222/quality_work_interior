@@ -1089,3 +1089,191 @@
 @media (max-width: 640px) {
     .qw-front .contact-form-row { grid-template-columns: 1fr !important; }
 }
+
+/* Floating WhatsApp widget & back to top */
+.qw-front .front-floating-actions {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.qw-front .front-wa-panel {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px -10px rgba(20, 17, 15, 0.3);
+    width: 290px;
+    overflow: hidden;
+    animation: fadeUp 0.2s ease;
+}
+
+.qw-front .front-wa-panel-header {
+    background: var(--ink);
+    padding: 15px 18px 13px;
+}
+
+.qw-front .front-wa-panel-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-onDark);
+}
+
+.qw-front .front-wa-panel-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ADE80;
+    flex-shrink: 0;
+}
+
+.qw-front .front-wa-panel-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    color: rgba(246, 242, 236, 0.38);
+    padding-left: 15px;
+    margin: 0;
+}
+
+.qw-front .front-wa-panel-agents {
+    padding: 8px;
+}
+
+.qw-front .front-wa-agent-row {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px;
+    border-radius: 10px;
+    transition: background 0.15s ease;
+}
+
+.qw-front .front-wa-agent-row:hover {
+    background: var(--paper);
+}
+
+.qw-front .front-wa-agent-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--paper-2);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 0.88rem;
+    color: var(--brass);
+    font-optical-sizing: auto;
+}
+
+.qw-front .front-wa-agent-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.qw-front .front-wa-agent-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.qw-front .front-wa-agent-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+}
+
+.qw-front .front-wa-panel-footer {
+    padding: 8px 16px 12px;
+    border-top: 1px solid var(--line);
+}
+
+.qw-front .front-wa-panel-footer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.64rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0;
+}
+
+.qw-front .front-wa-fab {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--brass);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 28px -4px rgba(176, 137, 79, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.qw-front .front-wa-fab:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px -4px rgba(176, 137, 79, 0.65);
+}
+
+.qw-front .front-wa-fab-badge {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 14px;
+    height: 14px;
+    background: #B23A3A;
+    border-radius: 50%;
+    border: 2px solid var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.4rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.qw-front .front-back-to-top {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px -4px rgba(20, 17, 15, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-onDark);
+    flex-shrink: 0;
+    animation: fadeUp 0.2s ease;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.qw-front .front-back-to-top:hover {
+    transform: translateY(-2px);
+    background: var(--ink-soft);
+}
+
+@media (max-width: 480px) {
+    .qw-front .front-floating-actions {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .qw-front .front-wa-panel {
+        width: min(290px, calc(100vw - 40px));
+    }
+}

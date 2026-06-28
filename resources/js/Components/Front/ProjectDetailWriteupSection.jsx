@@ -38,6 +38,8 @@ export default function ProjectDetailWriteupSection({ project }) {
                         </h2>
                         <a
                             href={project.waLink}
+                            target="_blank"
+                            rel="noreferrer"
                             style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.8rem', padding: '10px 18px', borderRadius: 999 }}
                         >
                             <WhatsAppIcon size={13} color="#fff" />

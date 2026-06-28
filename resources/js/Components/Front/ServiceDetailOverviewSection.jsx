@@ -39,7 +39,7 @@ export default function ServiceDetailOverviewSection({ service }) {
                             ))}
                         </div>
                         <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid var(--line)' }}>
-                            <a href={service.waLink} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'var(--brass)', color: '#FFF8EE', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.85rem', padding: '12px 20px', borderRadius: 999 }}>
+                            <a href={service.waLink} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'var(--brass)', color: '#FFF8EE', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.85rem', padding: '12px 20px', borderRadius: 999 }}>
                                 <WhatsAppIcon size={14} color="#FFF8EE" />
                                 Get a Quote via WhatsApp
                             </a>

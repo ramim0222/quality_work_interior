@@ -52,6 +52,8 @@ export default function ServicesHeroSection() {
                             ))}
                             <a
                                 href="https://wa.me/6598683650?text=Hi%2C%20I'd%20like%20a%20free%20quote"
+                                target="_blank"
+                                rel="noreferrer"
                                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.85rem', padding: '12px 20px', borderRadius: 999, marginTop: 22 }}
                             >
                                 <WhatsAppIcon size={14} color="#fff" />

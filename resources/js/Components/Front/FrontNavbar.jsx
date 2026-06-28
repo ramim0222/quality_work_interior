@@ -175,7 +175,7 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
                         </svg>
                         <span className="front-navbar-phone-text">9868 3650</span>
                     </a>
-                    <a href="https://wa.me/6598683650" className="front-navbar-wa-btn">
+                    <a href="https://wa.me/6598683650" target="_blank" rel="noreferrer" className="front-navbar-wa-btn">
                         <WhatsAppIcon size={13} color="#FFF8EE" />
                         <span className="front-navbar-wa-text">WhatsApp Us</span>
                     </a>
@@ -214,7 +214,7 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.22a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
                         Call 9868 3650
                     </a>
-                    <a href="https://wa.me/6598683650" className="front-navbar-mobile-wa" onClick={closeMenu}>
+                    <a href="https://wa.me/6598683650" target="_blank" rel="noreferrer" className="front-navbar-mobile-wa" onClick={closeMenu}>
                         <WhatsAppIcon size={16} color="#fff" />
                         WhatsApp Us Now
                     </a>

@@ -59,7 +59,7 @@ export default function AboutTeamSection() {
                                 <p style={{ fontFamily: "'Inter',sans-serif", fontSize: '.78rem', color: 'var(--text-muted)', marginBottom: 16 }}>{person.role}</p>
                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 14, borderTop: '1px solid var(--line)' }}>
                                     <span style={{ fontFamily: "'Inter',sans-serif", fontSize: '.68rem', color: 'var(--text-muted)' }}>{person.note}</span>
-                                    <a href={person.wa} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.68rem', padding: '6px 12px', borderRadius: 999 }}>
+                                    <a href={person.wa} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.68rem', padding: '6px 12px', borderRadius: 999 }}>
                                         <WhatsAppIcon size={11} color="#fff" />
                                         WhatsApp
                                     </a>

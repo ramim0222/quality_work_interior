@@ -31,6 +31,8 @@ export default function HeroSection() {
                 <div className="hero-btns" style={{ display: 'flex', gap: 12, marginTop: 40, alignItems: 'center', flexWrap: 'wrap', animation: 'fadeUp .8s 1.1s both' }}>
                     <a
                         href="https://wa.me/6598683650?text=Hi%2C%20I'd%20like%20a%20free%20quote"
+                        target="_blank"
+                        rel="noreferrer"
                         style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.9rem', padding: '14px 28px', borderRadius: 999 }}
                     >
                         <WhatsAppIcon size={16} color="#fff" />

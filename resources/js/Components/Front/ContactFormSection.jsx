@@ -141,7 +141,7 @@ export default function ContactFormSection() {
                     </div>
                     <div style={{ flex: 1 }}>
                         <div style={{ fontFamily: "'Inter',sans-serif", fontSize: '.78rem', fontWeight: 600, color: 'var(--text)' }}>WhatsApp</div>
-                        <a href="https://wa.me/6598683650" style={{ fontFamily: "'Inter',sans-serif", fontSize: '.82rem', color: 'var(--wa)', fontWeight: 600 }}>+65 9868 3650</a>
+                        <a href="https://wa.me/6598683650" target="_blank" rel="noreferrer" style={{ fontFamily: "'Inter',sans-serif", fontSize: '.82rem', color: 'var(--wa)', fontWeight: 600 }}>+65 9868 3650</a>
                     </div>
                     <span style={{ fontFamily: "'Inter',sans-serif", fontSize: '.65rem', color: 'var(--text-muted)' }}>Replies &lt; 1hr</span>
                 </div>

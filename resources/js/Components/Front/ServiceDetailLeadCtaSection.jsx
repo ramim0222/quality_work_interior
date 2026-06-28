@@ -15,7 +15,7 @@ export default function ServiceDetailLeadCtaSection({ service }) {
                     Free site assessment · Written quote · 12-month warranty on all works
                 </p>
                 <div style={{ display: 'flex', gap: 12, justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <a href={service.waLink} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.9rem', padding: '14px 28px', borderRadius: 999 }}>
+                    <a href={service.waLink} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.9rem', padding: '14px 28px', borderRadius: 999 }}>
                         <WhatsAppIcon size={16} color="#fff" />
                         WhatsApp about this service
                     </a>

@@ -37,6 +37,8 @@ export default function LeadCtaSection() {
                     <div style={{ display: 'flex', gap: 12, justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
                         <a
                             href="https://wa.me/6598683650?text=Hi%2C%20I'd%20like%20a%20free%20quote"
+                            target="_blank"
+                            rel="noreferrer"
                             style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'var(--wa)', color: '#fff', fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '.95rem', padding: '15px 30px', borderRadius: 999 }}
                         >
                             <WhatsAppIcon size={18} color="#fff" />
