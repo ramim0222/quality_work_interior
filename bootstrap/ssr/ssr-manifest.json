@@ -1,8 +1,8 @@
 {
   "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
   "resources/css/front.css": [
-    "/build/assets/front-B1zqx60K.js",
-    "/build/assets/front-BBBrrGAR.css"
+    "/build/assets/front-Cj9kKNUW.js",
+    "/build/assets/front-B_ZVx1CR.css"
   ],
   "resources/js/Components/ApplicationLogo.jsx": [
     "/build/assets/ApplicationLogo-xMpxFOcX.js"
@@ -17,55 +17,73 @@
     "/build/assets/AuthenticatedLayout-zpMPTFSd.js"
   ],
   "resources/js/Components/Front/FaqSection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Components/Front/FrontFooter.jsx": [
-    "/build/assets/front-B1zqx60K.js",
-    "/build/assets/front-BBBrrGAR.css"
+    "/build/assets/front-Cj9kKNUW.js",
+    "/build/assets/front-B_ZVx1CR.css"
   ],
   "resources/js/Components/Front/FrontNavbar.jsx": [
-    "/build/assets/front-B1zqx60K.js",
-    "/build/assets/front-BBBrrGAR.css"
+    "/build/assets/front-Cj9kKNUW.js",
+    "/build/assets/front-B_ZVx1CR.css"
   ],
   "resources/js/Components/Front/FrontScrollRefresh.jsx": [
-    "/build/assets/front-B1zqx60K.js",
-    "/build/assets/front-BBBrrGAR.css"
+    "/build/assets/front-Cj9kKNUW.js",
+    "/build/assets/front-B_ZVx1CR.css"
   ],
   "resources/js/Components/Front/HeroSection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Components/Front/IntroSection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Components/Front/LeadCtaSection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Components/Front/ProcessSection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Components/Front/ProjectsSection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
+  ],
+  "resources/js/Components/Front/ServiceDetailGallerySection.jsx": [
+    "/build/assets/Page-NrIy9S1W.js"
+  ],
+  "resources/js/Components/Front/ServiceDetailHeroSection.jsx": [
+    "/build/assets/Page-NrIy9S1W.js"
+  ],
+  "resources/js/Components/Front/ServiceDetailLeadCtaSection.jsx": [
+    "/build/assets/Page-NrIy9S1W.js"
+  ],
+  "resources/js/Components/Front/ServiceDetailOverviewSection.jsx": [
+    "/build/assets/Page-NrIy9S1W.js"
+  ],
+  "resources/js/Components/Front/ServiceDetailProcessSection.jsx": [
+    "/build/assets/Page-NrIy9S1W.js"
+  ],
+  "resources/js/Components/Front/ServiceDetailRelatedSection.jsx": [
+    "/build/assets/Page-NrIy9S1W.js"
   ],
   "resources/js/Components/Front/ServicesGridSection.jsx": [
-    "/build/assets/Index-D4ATWgFW.js"
+    "/build/assets/Index-CHLAh6Iy.js"
   ],
   "resources/js/Components/Front/ServicesHeroSection.jsx": [
-    "/build/assets/Index-D4ATWgFW.js"
+    "/build/assets/Index-CHLAh6Iy.js"
   ],
   "resources/js/Components/Front/ServicesLeadCtaSection.jsx": [
-    "/build/assets/Index-D4ATWgFW.js"
+    "/build/assets/Index-CHLAh6Iy.js"
   ],
   "resources/js/Components/Front/ServicesReassuranceStrip.jsx": [
-    "/build/assets/Index-D4ATWgFW.js"
+    "/build/assets/Index-CHLAh6Iy.js"
   ],
   "resources/js/Components/Front/ServicesSection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Components/Front/TestimonialsSection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Components/Front/WhySection.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Components/InputError.jsx": [
     "/build/assets/TextInput-BP-vnUns.js"
@@ -92,8 +110,8 @@
     "/build/assets/TextInput-BP-vnUns.js"
   ],
   "resources/js/Components/icons/WhatsAppIcon.jsx": [
-    "/build/assets/front-B1zqx60K.js",
-    "/build/assets/front-BBBrrGAR.css"
+    "/build/assets/front-Cj9kKNUW.js",
+    "/build/assets/front-B_ZVx1CR.css"
   ],
   "resources/js/Layouts/AuthenticatedLayout.jsx": [
     "/build/assets/AuthenticatedLayout-zpMPTFSd.js"
@@ -123,19 +141,19 @@
     "/build/assets/Dashboard-DOCLXSKk.js"
   ],
   "resources/js/Pages/Front/Home.jsx": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
   ],
   "resources/js/Pages/Front/Projects/Index.jsx": [
-    "/build/assets/Page-QICEybPt.js"
+    "/build/assets/Page-D56uinPo.js"
   ],
   "resources/js/Pages/Front/Projects/Page.jsx": [
-    "/build/assets/Page-QICEybPt.js"
+    "/build/assets/Page-D56uinPo.js"
   ],
   "resources/js/Pages/Front/Services/Index.jsx": [
-    "/build/assets/Index-D4ATWgFW.js"
+    "/build/assets/Index-CHLAh6Iy.js"
   ],
   "resources/js/Pages/Front/Services/Page.jsx": [
-    "/build/assets/Page-QICEybPt.js"
+    "/build/assets/Page-NrIy9S1W.js"
   ],
   "resources/js/Pages/Profile/Edit.jsx": [
     "/build/assets/Edit-BFeM5QDF.js"
@@ -153,19 +171,22 @@
     "/build/assets/Welcome-Elc7Ww9a.js"
   ],
   "resources/js/data/homeData.js": [
-    "/build/assets/Home-CJyUHUXh.js"
+    "/build/assets/Home-C7D0mOYO.js"
+  ],
+  "resources/js/data/serviceDetailData.js": [
+    "/build/assets/Page-NrIy9S1W.js"
   ],
   "resources/js/data/servicesData.js": [
-    "/build/assets/front-B1zqx60K.js",
-    "/build/assets/front-BBBrrGAR.css"
+    "/build/assets/front-Cj9kKNUW.js",
+    "/build/assets/front-B_ZVx1CR.css"
   ],
   "resources/js/hooks/useGsapContext.js": [
-    "/build/assets/front-B1zqx60K.js",
-    "/build/assets/front-BBBrrGAR.css"
+    "/build/assets/front-Cj9kKNUW.js",
+    "/build/assets/front-B_ZVx1CR.css"
   ],
   "resources/js/lib/gsap.js": [
-    "/build/assets/front-B1zqx60K.js",
-    "/build/assets/front-BBBrrGAR.css"
+    "/build/assets/front-Cj9kKNUW.js",
+    "/build/assets/front-B_ZVx1CR.css"
   ],
   "resources/js/ssr.jsx": [],
   "vendor/tightenco/ziggy/dist/index.js": []

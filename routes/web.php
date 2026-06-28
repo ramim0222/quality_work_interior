@@ -12,6 +12,10 @@ Route::get('/services', function () {
     return Inertia::render('Front/Services/Index');
 });
 
+Route::get('/services/{slug}', function (string $slug) {
+    return Inertia::render('Front/Services/Page', ['slug' => $slug]);
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -1,6 +1,6 @@
 import { jsxs, jsx } from "react/jsx-runtime";
 import { Link, Head } from "@inertiajs/react";
-import { W as WhatsAppIcon, u as useGsapContext, s as serviceCatalog, F as FrontNavbar, a as FrontScrollRefresh, b as FrontFooter } from "./front-B1zqx60K.js";
+import { W as WhatsAppIcon, u as useGsapContext, s as serviceCatalog, F as FrontNavbar, a as FrontScrollRefresh, b as FrontFooter } from "./front-Cj9kKNUW.js";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
