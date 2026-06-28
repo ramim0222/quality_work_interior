@@ -6,7 +6,7 @@ import ServicesLeadCtaSection from '@/Components/Front/ServicesLeadCtaSection';
 
 export default function ServicesIndex() {
     return (
-        <FrontLayout title="Services — Quality Work Interior" navbarVariant="solid" activePath="/services">
+        <FrontLayout title="Services — Quality Work Interior" activePath="/services">
             <ServicesHeroSection />
             <ServicesGridSection />
             <ServicesReassuranceStrip />

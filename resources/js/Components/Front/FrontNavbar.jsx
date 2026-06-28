@@ -33,16 +33,41 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
             if (logo) logo.style.color = scrolled ? '#14110F' : '#F6F2EC';
             if (phone) phone.style.color = scrolled ? '#6B635A' : 'rgba(246,242,236,.38)';
 
-            document.querySelectorAll('[data-nav]').forEach((el) => {
-                if (el.dataset.active === 'true') return;
-                el.style.color = scrolled ? 'rgba(20,17,15,.55)' : 'rgba(246,242,236,.55)';
+            header.querySelectorAll('nav [data-nav]').forEach((el) => {
+                const isActive = el.dataset.active === 'true';
+                if (scrolled) {
+                    el.style.color = isActive ? '#14110F' : 'rgba(20,17,15,.55)';
+                    el.style.fontWeight = isActive ? '600' : '400';
+                    el.style.borderBottom = isActive ? '1.5px solid var(--brass)' : 'none';
+                    el.style.paddingBottom = isActive ? '2px' : '0';
+                } else {
+                    el.style.color = isActive ? 'var(--text-onDark)' : 'rgba(246,242,236,.55)';
+                    el.style.fontWeight = isActive ? '600' : '400';
+                    el.style.borderBottom = isActive ? '1.5px solid var(--brass)' : 'none';
+                    el.style.paddingBottom = isActive ? '2px' : '0';
+                }
             });
         };
 
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    }, [isSolid]);
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            header.style.background = '';
+            header.style.boxShadow = '';
+            header.style.borderBottom = '';
+            const logo = document.getElementById('header-logo');
+            const phone = document.getElementById('header-phone');
+            if (logo) logo.style.color = '';
+            if (phone) phone.style.color = '';
+            header.querySelectorAll('nav [data-nav]').forEach((el) => {
+                el.style.color = '';
+                el.style.fontWeight = '';
+                el.style.borderBottom = '';
+                el.style.paddingBottom = '';
+            });
+        };
+    }, [isSolid, activePath]);
 
     const navStyle = (href) => {
         const isActive = activePath === href;
@@ -59,8 +84,10 @@ export default function FrontNavbar({ variant = 'transparent', activePath = null
         return {
             fontFamily: "'Inter',sans-serif",
             fontSize: '.83rem',
-            color: 'rgba(246,242,236,.55)',
-            fontWeight: 400,
+            color: isActive ? 'var(--text-onDark)' : 'rgba(246,242,236,.55)',
+            fontWeight: isActive ? 600 : 400,
+            borderBottom: isActive ? '1.5px solid var(--brass)' : 'none',
+            paddingBottom: isActive ? 2 : 0,
             transition: 'color .3s',
         };
     };

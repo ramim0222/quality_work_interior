@@ -1,8 +1,9 @@
 import { jsx, jsxs, Fragment } from "react/jsx-runtime";
-import { Link, Head } from "@inertiajs/react";
-import { W as WhatsAppIcon, u as useGsapContext, s as serviceCatalog, F as FrontNavbar, b as FrontFooter, a as FrontScrollRefresh } from "./front-Cj9kKNUW.js";
+import { W as WhatsAppIcon, u as useGsapContext, F as FrontLayout } from "./useGsapContext-ClCZzQWm.js";
 import { useRef, useEffect, useState } from "react";
+import { Link } from "@inertiajs/react";
 import gsap from "gsap";
+import { s as serviceCatalog } from "./servicesData-DFahS6mZ.js";
 import "gsap/ScrollTrigger";
 function ServiceDetailHeroSection({ service }) {
   const heroImgRef = useRef(null);
@@ -411,35 +412,38 @@ function getRelatedServices(slugs) {
 function ServicesPage({ slug }) {
   const service = getServiceDetail(slug);
   if (!service) {
-    return /* @__PURE__ */ jsxs("div", { className: "qw-front", children: [
-      /* @__PURE__ */ jsx(Head, { title: "Service Not Found" }),
-      /* @__PURE__ */ jsx(FrontNavbar, { variant: "solid", activePath: "/services" }),
-      /* @__PURE__ */ jsx("main", { style: { paddingTop: 120, paddingBottom: 80, textAlign: "center" }, children: /* @__PURE__ */ jsxs("div", { className: "qw-container", children: [
-        /* @__PURE__ */ jsx("h1", { style: { fontFamily: "'Fraunces',serif", fontSize: "2rem", marginBottom: 16 }, children: "Service not found" }),
-        /* @__PURE__ */ jsx("a", { href: "/services", style: { color: "var(--brass)", fontFamily: "'Inter',sans-serif" }, children: "← Back to all services" })
-      ] }) }),
-      /* @__PURE__ */ jsx(FrontFooter, {})
-    ] });
+    return /* @__PURE__ */ jsx(
+      FrontLayout,
+      {
+        title: "Service Not Found",
+        navbarVariant: "solid",
+        activePath: "/services",
+        scrollRefresh: false,
+        mainProps: { style: { paddingTop: 120, paddingBottom: 80, textAlign: "center" } },
+        children: /* @__PURE__ */ jsxs("div", { className: "qw-container", children: [
+          /* @__PURE__ */ jsx("h1", { style: { fontFamily: "'Fraunces',serif", fontSize: "2rem", marginBottom: 16 }, children: "Service not found" }),
+          /* @__PURE__ */ jsx("a", { href: "/services", style: { color: "var(--brass)", fontFamily: "'Inter',sans-serif" }, children: "← Back to all services" })
+        ] })
+      }
+    );
   }
   const related = getRelatedServices(service.relatedSlugs);
-  return /* @__PURE__ */ jsxs("div", { className: "qw-front", children: [
-    /* @__PURE__ */ jsxs(Head, { title: `${service.name} — Quality Work Interior`, children: [
-      /* @__PURE__ */ jsx("link", { rel: "preconnect", href: "https://fonts.googleapis.com" }),
-      /* @__PURE__ */ jsx("link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" }),
-      /* @__PURE__ */ jsx("link", { href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap", rel: "stylesheet" })
-    ] }),
-    /* @__PURE__ */ jsx(FrontNavbar, { variant: "solid", activePath: "/services" }),
-    /* @__PURE__ */ jsx(FrontScrollRefresh, {}),
-    /* @__PURE__ */ jsxs("main", { children: [
-      /* @__PURE__ */ jsx(ServiceDetailHeroSection, { service }),
-      /* @__PURE__ */ jsx(ServiceDetailOverviewSection, { service }),
-      /* @__PURE__ */ jsx(ServiceDetailGallerySection, { service }),
-      /* @__PURE__ */ jsx(ServiceDetailProcessSection, { service }),
-      /* @__PURE__ */ jsx(ServiceDetailRelatedSection, { related }),
-      /* @__PURE__ */ jsx(ServiceDetailLeadCtaSection, { service })
-    ] }),
-    /* @__PURE__ */ jsx(FrontFooter, {})
-  ] });
+  return /* @__PURE__ */ jsxs(
+    FrontLayout,
+    {
+      title: `${service.name} — Quality Work Interior`,
+      navbarVariant: "solid",
+      activePath: "/services",
+      children: [
+        /* @__PURE__ */ jsx(ServiceDetailHeroSection, { service }),
+        /* @__PURE__ */ jsx(ServiceDetailOverviewSection, { service }),
+        /* @__PURE__ */ jsx(ServiceDetailGallerySection, { service }),
+        /* @__PURE__ */ jsx(ServiceDetailProcessSection, { service }),
+        /* @__PURE__ */ jsx(ServiceDetailRelatedSection, { related }),
+        /* @__PURE__ */ jsx(ServiceDetailLeadCtaSection, { service })
+      ]
+    }
+  );
 }
 export {
   ServicesPage as default

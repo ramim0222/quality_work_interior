@@ -1,8 +1,9 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { Link, Head } from "@inertiajs/react";
-import { W as WhatsAppIcon, u as useGsapContext, s as serviceCatalog, F as FrontNavbar, a as FrontScrollRefresh, b as FrontFooter } from "./front-Cj9kKNUW.js";
+import { W as WhatsAppIcon, u as useGsapContext, F as FrontLayout } from "./useGsapContext-ClCZzQWm.js";
+import { Link } from "@inertiajs/react";
 import { useRef, useState } from "react";
 import gsap from "gsap";
+import { s as serviceCatalog } from "./servicesData-DFahS6mZ.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 function HeroSection() {
   return /* @__PURE__ */ jsxs("section", { style: { minHeight: "100vh", position: "relative", overflow: "hidden", display: "flex", alignItems: "flex-end" }, children: [
@@ -612,26 +613,16 @@ function LeadCtaSection() {
   ] });
 }
 function Home() {
-  return /* @__PURE__ */ jsxs("div", { className: "qw-front", children: [
-    /* @__PURE__ */ jsxs(Head, { title: "Quality Work Interior", children: [
-      /* @__PURE__ */ jsx("link", { rel: "preconnect", href: "https://fonts.googleapis.com" }),
-      /* @__PURE__ */ jsx("link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" }),
-      /* @__PURE__ */ jsx("link", { href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap", rel: "stylesheet" })
-    ] }),
-    /* @__PURE__ */ jsx(FrontNavbar, {}),
-    /* @__PURE__ */ jsx(FrontScrollRefresh, {}),
-    /* @__PURE__ */ jsxs("main", { children: [
-      /* @__PURE__ */ jsx(HeroSection, {}),
-      /* @__PURE__ */ jsx(IntroSection, {}),
-      /* @__PURE__ */ jsx(ServicesSection, {}),
-      /* @__PURE__ */ jsx(ProjectsSection, {}),
-      /* @__PURE__ */ jsx(ProcessSection, {}),
-      /* @__PURE__ */ jsx(WhySection, {}),
-      /* @__PURE__ */ jsx(TestimonialsSection, {}),
-      /* @__PURE__ */ jsx(FaqSection, {}),
-      /* @__PURE__ */ jsx(LeadCtaSection, {})
-    ] }),
-    /* @__PURE__ */ jsx(FrontFooter, {})
+  return /* @__PURE__ */ jsxs(FrontLayout, { title: "Quality Work Interior", children: [
+    /* @__PURE__ */ jsx(HeroSection, {}),
+    /* @__PURE__ */ jsx(IntroSection, {}),
+    /* @__PURE__ */ jsx(ServicesSection, {}),
+    /* @__PURE__ */ jsx(ProjectsSection, {}),
+    /* @__PURE__ */ jsx(ProcessSection, {}),
+    /* @__PURE__ */ jsx(WhySection, {}),
+    /* @__PURE__ */ jsx(TestimonialsSection, {}),
+    /* @__PURE__ */ jsx(FaqSection, {}),
+    /* @__PURE__ */ jsx(LeadCtaSection, {})
   ] });
 }
 export {

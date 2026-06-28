@@ -16,6 +16,14 @@ Route::get('/services/{slug}', function (string $slug) {
     return Inertia::render('Front/Services/Page', ['slug' => $slug]);
 });
 
+Route::get('/projects', function () {
+    return Inertia::render('Front/Projects/Index');
+});
+
+Route::get('/projects/{slug}', function (string $slug) {
+    return Inertia::render('Front/Projects/Page', ['slug' => $slug]);
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
