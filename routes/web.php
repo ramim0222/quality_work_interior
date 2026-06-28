@@ -24,6 +24,10 @@ Route::get('/projects/{slug}', function (string $slug) {
     return Inertia::render('Front/Projects/Page', ['slug' => $slug]);
 });
 
+Route::get('/about', function () {
+    return Inertia::render('Front/About');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

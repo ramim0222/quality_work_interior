@@ -539,3 +539,68 @@
 @media (max-width: 480px) {
     .qw-front .project-gal-grid { grid-template-columns: 1fr !important; }
 }
+
+/* About page */
+.qw-front .about-val-card {
+    border-radius: 14px;
+    padding: 32px 28px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    transition: background 0.22s, border-color 0.22s, box-shadow 0.22s;
+    visibility: hidden;
+}
+
+.qw-front .about-val-card:hover {
+    background: #fff;
+    border-color: rgba(176, 137, 79, 0.25);
+    box-shadow: 0 10px 36px -8px rgba(20, 17, 15, 0.1);
+}
+
+.qw-front .about-team-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #fff;
+    transition: box-shadow 0.28s, border-color 0.28s;
+    visibility: hidden;
+}
+
+.qw-front .about-team-card:hover {
+    box-shadow: 0 16px 48px -10px rgba(20, 17, 15, 0.14);
+    border-color: rgba(176, 137, 79, 0.28);
+}
+
+.qw-front .about-team-card .photo-inner {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.qw-front .about-team-card:hover .photo-inner {
+    transform: scale(1.05);
+}
+
+.qw-front .about-area-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line-dark);
+    visibility: hidden;
+}
+
+.qw-front .about-area-item:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 960px) {
+    .qw-front .about-story-grid { grid-template-columns: 1fr !important; }
+    .qw-front .about-val-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .qw-front .about-team-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .qw-front .about-cover-grid { grid-template-columns: 1fr !important; }
+    .qw-front .about-hero-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 600px) {
+    .qw-front .about-val-grid { grid-template-columns: 1fr !important; }
+    .qw-front .about-team-grid { grid-template-columns: 1fr !important; }
+    .qw-front .about-stats-row { grid-template-columns: repeat(2, 1fr) !important; }
+}
