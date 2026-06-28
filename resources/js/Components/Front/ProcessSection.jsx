@@ -1,23 +1,31 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from '@/lib/gsap';
+import { useGsapContext } from '@/hooks/useGsapContext';
 import { processSteps } from '@/data/homeData';
 
 export default function ProcessSection() {
     const sectionRef = useRef(null);
     const lineRef = useRef(null);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.fromTo(lineRef.current,
+    useGsapContext(sectionRef, () => {
+        if (lineRef.current) {
+            gsap.fromTo(
+                lineRef.current,
                 { scaleX: 0 },
                 {
-                    scaleX: 1, transformOrigin: 'left center', ease: 'power2.inOut',
-                    scrollTrigger: { trigger: sectionRef.current, start: 'top 58%', end: 'bottom 62%', scrub: 0.6 },
+                    scaleX: 1,
+                    transformOrigin: 'left center',
+                    ease: 'power2.inOut',
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 58%',
+                        end: 'bottom 62%',
+                        scrub: 0.6,
+                    },
                 },
             );
-        }, sectionRef);
-        return () => ctx.revert();
-    }, []);
+        }
+    });
 
     return (
         <section ref={sectionRef} id="process-section" style={{ background: 'var(--paper)', padding: 'clamp(80px,12vh,140px) 0' }}>

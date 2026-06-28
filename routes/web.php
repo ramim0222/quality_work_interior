@@ -8,6 +8,10 @@ Route::get('/', function () {
     return Inertia::render('Front/Home');
 });
 
+Route::get('/services', function () {
+    return Inertia::render('Front/Services/Index');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

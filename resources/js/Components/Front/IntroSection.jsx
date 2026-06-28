@@ -1,6 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from '@inertiajs/react';
 import { gsap } from '@/lib/gsap';
+import { useGsapContext } from '@/hooks/useGsapContext';
 
 export default function IntroSection() {
     const statYearsRef = useRef(null);
@@ -9,31 +10,35 @@ export default function IntroSection() {
     const statHoursRef = useRef(null);
     const sectionRef = useRef(null);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            const counters = [
-                { ref: statYearsRef, target: 8, suffix: '+' },
-                { ref: statJobsRef, target: 1200, suffix: '+' },
-                { ref: statServicesRef, target: 12, suffix: '' },
-            ];
-            counters.forEach(({ ref, target, suffix }) => {
-                const el = ref.current;
-                if (!el) return;
-                const obj = { val: 0 };
-                gsap.to(obj, {
-                    val: target, duration: 2.2, ease: 'power2.out',
-                    onUpdate: () => { el.textContent = Math.floor(obj.val) + suffix; },
-                    scrollTrigger: { trigger: el, start: 'top 82%', once: true },
-                });
+    useGsapContext(sectionRef, () => {
+        const counters = [
+            { ref: statYearsRef, target: 8, suffix: '+' },
+            { ref: statJobsRef, target: 1200, suffix: '+' },
+            { ref: statServicesRef, target: 12, suffix: '' },
+        ];
+        counters.forEach(({ ref, target, suffix }) => {
+            const el = ref.current;
+            if (!el) return;
+            const obj = { val: 0 };
+            gsap.to(obj, {
+                val: target,
+                duration: 2.2,
+                ease: 'power2.out',
+                onUpdate: () => { el.textContent = Math.floor(obj.val) + suffix; },
+                scrollTrigger: { trigger: el, start: 'top 82%', once: true },
             });
+        });
+
+        if (statHoursRef.current) {
             gsap.from(statHoursRef.current, {
-                opacity: 0, y: 16, duration: 0.8, ease: 'power3.out',
+                opacity: 0,
+                y: 16,
+                duration: 0.8,
+                ease: 'power3.out',
                 scrollTrigger: { trigger: statHoursRef.current, start: 'top 82%', once: true },
             });
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, []);
+        }
+    });
 
     return (
         <section ref={sectionRef} style={{ background: 'var(--paper)', padding: 'clamp(80px,12vh,140px) 0' }}>

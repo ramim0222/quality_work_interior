@@ -1,46 +1,34 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from '@inertiajs/react';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useGsapContext } from '@/hooks/useGsapContext';
 import { projects } from '@/data/homeData';
 
 export default function ProjectsSection() {
     const pinRef = useRef(null);
     const trackRef = useRef(null);
 
-    useEffect(() => {
-        let timer;
+    useGsapContext(pinRef, () => {
+        const track = trackRef.current;
+        const pin = pinRef.current;
+        if (!track || !pin) return;
 
-        const ctx = gsap.context(() => {
-            const track = trackRef.current;
-            const pin = pinRef.current;
-            if (!track || !pin) return;
-
-            const setupScroll = () => {
-                ScrollTrigger.refresh();
-                const dist = track.scrollWidth - pin.offsetWidth + 160;
-                if (dist > 0) {
-                    gsap.to(track, {
-                        x: -dist,
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: pin,
-                            pin: true,
-                            scrub: 1,
-                            end: () => `+=${dist + 100}`,
-                            invalidateOnRefresh: true,
-                        },
-                    });
-                }
-            };
-
-            timer = setTimeout(setupScroll, 100);
-        }, pinRef);
-
-        return () => {
-            clearTimeout(timer);
-            ctx.revert();
-        };
-    }, []);
+        ScrollTrigger.refresh(true);
+        const dist = track.scrollWidth - pin.offsetWidth + 160;
+        if (dist > 0) {
+            gsap.to(track, {
+                x: -dist,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: pin,
+                    pin: true,
+                    scrub: 1,
+                    end: () => `+=${dist + 100}`,
+                    invalidateOnRefresh: true,
+                },
+            });
+        }
+    });
 
     return (
         <section ref={pinRef} id="projects-pin" style={{ background: 'var(--ink)', padding: 'clamp(80px,12vh,140px) 0', overflow: 'hidden' }}>

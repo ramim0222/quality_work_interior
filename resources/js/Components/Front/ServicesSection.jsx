@@ -1,20 +1,26 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from '@inertiajs/react';
 import { gsap } from '@/lib/gsap';
+import { useGsapContext } from '@/hooks/useGsapContext';
 import { services } from '@/data/homeData';
 
 export default function ServicesSection() {
     const sectionRef = useRef(null);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.from('[data-reveal-card]', {
-                y: 44, opacity: 0, stagger: 0.055, duration: 0.85, ease: 'power3.out',
-                scrollTrigger: { trigger: sectionRef.current, start: 'top 68%' },
-            });
-        }, sectionRef);
-        return () => ctx.revert();
-    }, []);
+    useGsapContext(sectionRef, () => {
+        gsap.from('[data-reveal-card]', {
+            y: 44,
+            opacity: 0,
+            stagger: 0.055,
+            duration: 0.85,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top 68%',
+                once: true,
+            },
+        });
+    });
 
     return (
         <section ref={sectionRef} id="services-section" style={{ background: 'var(--paper-2)', padding: 'clamp(80px,12vh,140px) 0' }}>

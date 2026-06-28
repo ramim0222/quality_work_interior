@@ -1,17 +1,8 @@
-export const services = [
-    { num: '01', slug: 'spa-centre-renovation', name: 'Spa Centre Renovation', desc: 'Full fit-outs for wellness centres & spas' },
-    { num: '02', slug: 'ktv-renovation', name: 'KTV Renovation', desc: 'Acoustic rooms and themed lounge interiors' },
-    { num: '03', slug: 'retail-shop-renovation', name: 'Retail Shop Renovation', desc: 'Customer-first commercial fit-outs' },
-    { num: '04', slug: 'home-extension-room-additions', name: 'Home Extension & Room Additions', desc: 'Structural room additions and expansions' },
-    { num: '05', slug: 'bathroom-renovation', name: 'Bathroom Renovation', desc: 'Modern, functional bathroom transformations' },
-    { num: '06', slug: 'kitchen-renovation', name: 'Kitchen Renovation', desc: 'Practical kitchens that inspire cooking' },
-    { num: '07', slug: 'ceiling-partition-vinyl-flooring', name: 'Ceiling, Partition & Vinyl Flooring', desc: 'False ceilings, partitions & floor finishes' },
-    { num: '08', slug: 'remodels-paintings', name: 'Remodels & Paintings', desc: 'Whole-home remodels and interior painting' },
-    { num: '09', slug: 'hacking-reinstatement', name: 'Hacking & Reinstatement', desc: 'Demolition and HDB reinstatement works' },
-    { num: '10', slug: 'electrical-maintenance', name: 'Electrical Maintenance', desc: '24-hour electrical fault & installation' },
-    { num: '11', slug: 'general-plumbing-handyman', name: 'General Plumbing & Handyman', desc: 'Leak repairs, fixtures and general handyman' },
-    { num: '12', slug: 'roller-shutter-repair', name: 'Roller Shutter Repair', desc: 'Same-day shutter repairs & replacements' },
-];
+import { serviceCatalog } from './servicesData';
+
+export const services = serviceCatalog.map(({ num, slug, name, shortDesc }) => ({
+    num, slug, name, desc: shortDesc,
+}));
 
 export const projects = [
     { title: 'Modern HDB Master Bath', category: 'Bathroom Renovation', location: 'Sengkang', year: '2024' },

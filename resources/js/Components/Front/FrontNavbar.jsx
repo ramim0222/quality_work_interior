@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { Link } from '@inertiajs/react';
 import WhatsAppIcon from '@/Components/icons/WhatsAppIcon';
 
@@ -10,14 +10,19 @@ const navLinks = [
     { href: '/contact', label: 'Contact' },
 ];
 
-export default function FrontNavbar() {
-    const headerRef = useRef(null);
+export default function FrontNavbar({ variant = 'transparent', activePath = null }) {
+    const isSolid = variant === 'solid';
 
     useEffect(() => {
-        const header = headerRef.current;
+        const header = document.getElementById('qw-header');
         if (!header) return;
 
         const onScroll = () => {
+            if (isSolid) {
+                header.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(20,17,15,.08)' : 'none';
+                return;
+            }
+
             const scrolled = window.scrollY > 80;
             header.style.background = scrolled ? '#F6F2EC' : 'transparent';
             header.style.boxShadow = scrolled ? '0 1px 20px rgba(20,17,15,.08)' : 'none';
@@ -29,6 +34,7 @@ export default function FrontNavbar() {
             if (phone) phone.style.color = scrolled ? '#6B635A' : 'rgba(246,242,236,.38)';
 
             document.querySelectorAll('[data-nav]').forEach((el) => {
+                if (el.dataset.active === 'true') return;
                 el.style.color = scrolled ? 'rgba(20,17,15,.55)' : 'rgba(246,242,236,.55)';
             });
         };
@@ -36,11 +42,31 @@ export default function FrontNavbar() {
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
-    }, []);
+    }, [isSolid]);
+
+    const navStyle = (href) => {
+        const isActive = activePath === href;
+        if (isSolid) {
+            return {
+                fontFamily: "'Inter',sans-serif",
+                fontSize: '.83rem',
+                color: isActive ? 'var(--text)' : 'var(--text-muted)',
+                fontWeight: isActive ? 600 : 400,
+                borderBottom: isActive ? '1.5px solid var(--brass)' : 'none',
+                paddingBottom: isActive ? 2 : 0,
+            };
+        }
+        return {
+            fontFamily: "'Inter',sans-serif",
+            fontSize: '.83rem',
+            color: 'rgba(246,242,236,.55)',
+            fontWeight: 400,
+            transition: 'color .3s',
+        };
+    };
 
     return (
         <header
-            ref={headerRef}
             id="qw-header"
             style={{
                 position: 'fixed',
@@ -48,6 +74,8 @@ export default function FrontNavbar() {
                 left: 0,
                 right: 0,
                 zIndex: 200,
+                background: isSolid ? 'var(--paper)' : undefined,
+                borderBottom: isSolid ? '1px solid var(--line)' : undefined,
                 transition: 'background .35s, box-shadow .35s, border-bottom .35s',
             }}
         >
@@ -59,7 +87,7 @@ export default function FrontNavbar() {
                         fontFamily: "'Fraunces',serif",
                         fontWeight: 400,
                         fontSize: '1.25rem',
-                        color: 'var(--text-onDark)',
+                        color: isSolid ? 'var(--text)' : 'var(--text-onDark)',
                         letterSpacing: '-.015em',
                         flexShrink: 0,
                         marginRight: 16,
@@ -90,14 +118,9 @@ export default function FrontNavbar() {
                         <Link
                             key={link.href}
                             data-nav
+                            data-active={activePath === link.href ? 'true' : 'false'}
                             href={link.href}
-                            style={{
-                                fontFamily: "'Inter',sans-serif",
-                                fontSize: '.83rem',
-                                color: 'rgba(246,242,236,.55)',
-                                fontWeight: 400,
-                                transition: 'color .3s',
-                            }}
+                            style={navStyle(link.href)}
                         >
                             {link.label}
                         </Link>
@@ -111,7 +134,7 @@ export default function FrontNavbar() {
                         style={{
                             fontFamily: "'Inter',sans-serif",
                             fontSize: '.78rem',
-                            color: 'rgba(246,242,236,.38)',
+                            color: isSolid ? 'var(--text-muted)' : 'rgba(246,242,236,.38)',
                             display: 'flex',
                             alignItems: 'center',
                             gap: 6,
