@@ -339,7 +339,7 @@ function T(t4, e2, r2, n2) {
   const o2 = new N(t4, e2, r2, n2);
   return t4 ? o2.toString() : o2;
 }
-const appName = "Laravel";
+const appName = "Quality_Work_Interior";
 createServer(
   (page) => createInertiaApp({
     page,
@@ -347,7 +347,7 @@ createServer(
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.jsx`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Auth/ConfirmPassword.jsx": () => import("./assets/ConfirmPassword-DfjsHlSS.js"), "./Pages/Auth/ForgotPassword.jsx": () => import("./assets/ForgotPassword-CpJ9qria.js"), "./Pages/Auth/Login.jsx": () => import("./assets/Login-BwJPryVk.js"), "./Pages/Auth/Register.jsx": () => import("./assets/Register-DNZkdWGi.js"), "./Pages/Auth/ResetPassword.jsx": () => import("./assets/ResetPassword-CBtwklDW.js"), "./Pages/Auth/VerifyEmail.jsx": () => import("./assets/VerifyEmail-g2iP8tQZ.js"), "./Pages/Dashboard.jsx": () => import("./assets/Dashboard-s7V5BuYV.js"), "./Pages/Profile/Edit.jsx": () => import("./assets/Edit-jjNV0TPH.js"), "./Pages/Profile/Partials/DeleteUserForm.jsx": () => import("./assets/DeleteUserForm-Hy-SY24R.js"), "./Pages/Profile/Partials/UpdatePasswordForm.jsx": () => import("./assets/UpdatePasswordForm-zvD8TgBd.js"), "./Pages/Profile/Partials/UpdateProfileInformationForm.jsx": () => import("./assets/UpdateProfileInformationForm-DmOzctMU.js"), "./Pages/Welcome.jsx": () => import("./assets/Welcome-CjACvcmL.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Auth/ConfirmPassword.jsx": () => import("./assets/ConfirmPassword-DfjsHlSS.js"), "./Pages/Auth/ForgotPassword.jsx": () => import("./assets/ForgotPassword-CpJ9qria.js"), "./Pages/Auth/Login.jsx": () => import("./assets/Login-BwJPryVk.js"), "./Pages/Auth/Register.jsx": () => import("./assets/Register-DNZkdWGi.js"), "./Pages/Auth/ResetPassword.jsx": () => import("./assets/ResetPassword-CBtwklDW.js"), "./Pages/Auth/VerifyEmail.jsx": () => import("./assets/VerifyEmail-g2iP8tQZ.js"), "./Pages/Dashboard.jsx": () => import("./assets/Dashboard-DOCLXSKk.js"), "./Pages/Front/Home.jsx": () => import("./assets/Home-Ba6pQW4Z.js"), "./Pages/Profile/Edit.jsx": () => import("./assets/Edit-BFeM5QDF.js"), "./Pages/Profile/Partials/DeleteUserForm.jsx": () => import("./assets/DeleteUserForm-Hy-SY24R.js"), "./Pages/Profile/Partials/UpdatePasswordForm.jsx": () => import("./assets/UpdatePasswordForm-zvD8TgBd.js"), "./Pages/Profile/Partials/UpdateProfileInformationForm.jsx": () => import("./assets/UpdateProfileInformationForm-DmOzctMU.js"), "./Pages/Welcome.jsx": () => import("./assets/Welcome-Elc7Ww9a.js") })
     ),
     setup: ({ App, props }) => {
       global.route = (name, params, absolute) => T(name, params, absolute, {

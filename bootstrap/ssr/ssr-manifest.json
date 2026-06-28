@@ -1,5 +1,9 @@
 {
   "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
+  "resources/css/front.css": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
   "resources/js/Components/ApplicationLogo.jsx": [
     "/build/assets/ApplicationLogo-xMpxFOcX.js"
   ],
@@ -10,7 +14,51 @@
     "/build/assets/DeleteUserForm-Hy-SY24R.js"
   ],
   "resources/js/Components/Dropdown.jsx": [
-    "/build/assets/Edit-jjNV0TPH.js"
+    "/build/assets/AuthenticatedLayout-zpMPTFSd.js"
+  ],
+  "resources/js/Components/Front/FaqSection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/FrontFooter.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/FrontNavbar.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/HeroSection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/IntroSection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/LeadCtaSection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/ProcessSection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/ProjectsSection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/ServicesSection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/TestimonialsSection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/Components/Front/WhySection.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
   ],
   "resources/js/Components/InputError.jsx": [
     "/build/assets/TextInput-BP-vnUns.js"
@@ -18,20 +66,17 @@
   "resources/js/Components/InputLabel.jsx": [
     "/build/assets/InputLabel-CE_n4Upz.js"
   ],
-  "resources/js/Components/Layout/Header.jsx": [
-    "/build/assets/Welcome-CjACvcmL.js"
-  ],
   "resources/js/Components/Modal.jsx": [
     "/build/assets/DeleteUserForm-Hy-SY24R.js"
   ],
   "resources/js/Components/NavLink.jsx": [
-    "/build/assets/Edit-jjNV0TPH.js"
+    "/build/assets/AuthenticatedLayout-zpMPTFSd.js"
   ],
   "resources/js/Components/PrimaryButton.jsx": [
     "/build/assets/PrimaryButton-DgVfVBwo.js"
   ],
   "resources/js/Components/ResponsiveNavLink.jsx": [
-    "/build/assets/Edit-jjNV0TPH.js"
+    "/build/assets/AuthenticatedLayout-zpMPTFSd.js"
   ],
   "resources/js/Components/SecondaryButton.jsx": [
     "/build/assets/DeleteUserForm-Hy-SY24R.js"
@@ -39,14 +84,12 @@
   "resources/js/Components/TextInput.jsx": [
     "/build/assets/TextInput-BP-vnUns.js"
   ],
-  "resources/js/Components/ui/GamingButton.jsx": [
-    "/build/assets/Welcome-CjACvcmL.js"
-  ],
-  "resources/js/Components/ui/VoucherCard.jsx": [
-    "/build/assets/Welcome-CjACvcmL.js"
+  "resources/js/Components/icons/WhatsAppIcon.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
   ],
   "resources/js/Layouts/AuthenticatedLayout.jsx": [
-    "/build/assets/Edit-jjNV0TPH.js"
+    "/build/assets/AuthenticatedLayout-zpMPTFSd.js"
   ],
   "resources/js/Layouts/GuestLayout.jsx": [
     "/build/assets/GuestLayout-Ci26os6W.js"
@@ -70,10 +113,14 @@
     "/build/assets/VerifyEmail-g2iP8tQZ.js"
   ],
   "resources/js/Pages/Dashboard.jsx": [
-    "/build/assets/Dashboard-s7V5BuYV.js"
+    "/build/assets/Dashboard-DOCLXSKk.js"
+  ],
+  "resources/js/Pages/Front/Home.jsx": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
   ],
   "resources/js/Pages/Profile/Edit.jsx": [
-    "/build/assets/Edit-jjNV0TPH.js"
+    "/build/assets/Edit-BFeM5QDF.js"
   ],
   "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx": [
     "/build/assets/DeleteUserForm-Hy-SY24R.js"
@@ -85,10 +132,15 @@
     "/build/assets/UpdateProfileInformationForm-DmOzctMU.js"
   ],
   "resources/js/Pages/Welcome.jsx": [
-    "/build/assets/Welcome-CjACvcmL.js"
+    "/build/assets/Welcome-Elc7Ww9a.js"
   ],
-  "resources/js/lib/utils.js": [
-    "/build/assets/Welcome-CjACvcmL.js"
+  "resources/js/data/homeData.js": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
+  ],
+  "resources/js/lib/gsap.js": [
+    "/build/assets/Home-Ba6pQW4Z.js",
+    "/build/assets/Home-_Efdo_4O.css"
   ],
   "resources/js/ssr.jsx": [],
   "vendor/tightenco/ziggy/dist/index.js": []
