@@ -8,7 +8,7 @@ export const adminNavSections = [
     {
         label: 'Leads',
         items: [
-            { id: 'leads', label: 'Leads', href: '#', icon: 'leads', badge: '12' },
+            { id: 'leads', label: 'Leads', href: '/admin/leads', icon: 'leads', badge: '12' },
             { id: 'carousell', label: 'Carousell Leads', href: '#', icon: 'carousell' },
         ],
     },
