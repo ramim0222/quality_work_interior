@@ -40,6 +40,10 @@ Route::get('/admin/leads', function () {
     return Inertia::render('Admin/Leads');
 })->middleware(['auth', 'verified'])->name('admin.leads');
 
+Route::get('/admin/carousell-leads', function () {
+    return Inertia::render('Admin/CarousellLeads');
+})->middleware(['auth', 'verified'])->name('admin.carousell-leads');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

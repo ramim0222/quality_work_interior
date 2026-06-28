@@ -14,6 +14,7 @@
     --ok: #2E7D52;
     --warn: #C9842B;
     --err: #B23A3A;
+    --ca: #EE2420;
     --sidebar: 260px;
 
     height: 100vh;
@@ -2428,5 +2429,555 @@
 
     .qw-admin .admin-leads-drawer-actions {
         flex-direction: column;
+    }
+}
+
+/* ══════════════════════════════════════
+   Admin Carousell Leads page
+   ══════════════════════════════════════ */
+
+@keyframes adminCarousellFadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.qw-admin .admin-carousell-topbar {
+    height: 64px;
+    min-height: 64px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.qw-admin .admin-carousell-topbar .admin-topbar-menu {
+    display: none;
+}
+
+.qw-admin .admin-carousell-topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.qw-admin .admin-carousell-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: rgba(238, 36, 32, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.qw-admin .admin-carousell-logo span {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--ca, #EE2420);
+}
+
+.qw-admin .admin-carousell-topbar-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--text);
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+}
+
+.qw-admin .admin-carousell-topbar-subtitle {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 1px;
+}
+
+.qw-admin .admin-carousell-topbar-filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.qw-admin .admin-carousell-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 24px 32px;
+    background: var(--paper);
+    -webkit-overflow-scrolling: touch;
+    min-height: 0;
+}
+
+.qw-admin .admin-carousell-fi {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.83rem;
+    color: var(--text);
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 12px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.qw-admin .admin-carousell-fi:focus {
+    border-color: var(--brass);
+}
+
+.qw-admin .admin-carousell-fi--compact {
+    width: auto;
+    padding: 6px 10px;
+    font-size: 0.76rem;
+    max-width: 100%;
+}
+
+.qw-admin .admin-carousell-fi--area {
+    min-height: 72px;
+    resize: none;
+    line-height: 1.55;
+}
+
+.qw-admin .admin-carousell-fi--notes {
+    min-height: 56px;
+}
+
+.qw-admin .admin-carousell-lbl {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.qw-admin .admin-carousell-fade {
+    animation: adminCarousellFadeUp 0.45s both;
+}
+
+.qw-admin .admin-carousell-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.qw-admin .admin-carousell-summary-card {
+    padding: 16px 18px;
+    animation: adminCarousellFadeUp 0.5s both;
+}
+
+.qw-admin .admin-carousell-summary-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+}
+
+.qw-admin .admin-carousell-summary-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.qw-admin .admin-carousell-summary-note {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.qw-admin .admin-carousell-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 16px;
+    align-items: start;
+    min-width: 0;
+}
+
+.qw-admin .admin-carousell-form-card {
+    padding: 22px 22px 20px;
+}
+
+.qw-admin .admin-carousell-form-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.qw-admin .admin-carousell-form-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ca, #EE2420);
+    flex-shrink: 0;
+}
+
+.qw-admin .admin-carousell-form-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.qw-admin .admin-carousell-form-error {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--err);
+    background: rgba(178, 58, 58, 0.08);
+    border: 1px solid rgba(178, 58, 58, 0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    animation: adminCarousellFadeUp 0.35s both;
+}
+
+.qw-admin .admin-carousell-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.qw-admin .admin-carousell-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.qw-admin .admin-carousell-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--brass);
+    color: #FFF8EE;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 11px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.qw-admin .admin-carousell-submit:hover {
+    background: var(--brass-deep);
+    transform: translateY(-1px);
+}
+
+.qw-admin .admin-carousell-table-card {
+    overflow: hidden;
+    min-width: 0;
+}
+
+.qw-admin .admin-carousell-table-head-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.qw-admin .admin-carousell-table-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.qw-admin .admin-carousell-export-btn {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 5px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.qw-admin .admin-carousell-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.qw-admin .admin-carousell-table-desktop {
+    min-width: 720px;
+}
+
+.qw-admin .admin-carousell-tr {
+    display: grid;
+    grid-template-columns: 28px 1.5fr 0.9fr 1.1fr 88px 88px 78px 32px;
+    align-items: center;
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--line);
+    min-height: 44px;
+    transition: background 0.14s;
+    animation: adminCarousellFadeUp 0.4s both;
+}
+
+.qw-admin .admin-carousell-tr--head {
+    padding: 0 14px;
+    height: 34px;
+    min-height: 34px;
+    background: var(--paper);
+    animation: none;
+}
+
+.qw-admin .admin-carousell-tr:not(.admin-carousell-tr--head):hover {
+    background: var(--paper);
+}
+
+.qw-admin .admin-carousell-th {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+}
+
+.qw-admin .admin-carousell-source-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ca, #EE2420);
+    margin: 0 auto;
+    flex-shrink: 0;
+}
+
+.qw-admin .admin-carousell-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.qw-admin .admin-carousell-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(238, 36, 32, 0.1);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 0.65rem;
+    color: var(--ca, #EE2420);
+    font-optical-sizing: auto;
+}
+
+.qw-admin .admin-carousell-name-meta {
+    min-width: 0;
+}
+
+.qw-admin .admin-carousell-row-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.qw-admin .admin-carousell-row-sub {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.qw-admin .admin-carousell-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.qw-admin .admin-carousell-value {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.72rem;
+}
+
+.qw-admin .admin-carousell-date {
+    font-size: 0.65rem;
+}
+
+.qw-admin .admin-carousell-service-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.qw-admin .admin-carousell-status-select {
+    font-size: 0.68rem;
+    border: none;
+    border-radius: 6px;
+    padding: 3px 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    max-width: 100%;
+}
+
+.qw-admin .admin-carousell-row-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.qw-admin .admin-carousell-edit-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 2px;
+    display: flex;
+}
+
+.qw-admin .admin-carousell-mobile-list {
+    display: none;
+}
+
+/* Carousell responsive */
+@media (max-width: 1280px) {
+    .qw-admin .admin-carousell-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qw-admin .admin-carousell-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .qw-admin .admin-carousell-topbar .admin-topbar-menu {
+        display: flex;
+    }
+
+    .qw-admin .admin-carousell-topbar {
+        padding: 0 20px;
+    }
+
+    .qw-admin .admin-carousell-body {
+        padding: 16px 20px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .qw-admin .admin-carousell-topbar {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 56px;
+        padding: 10px 16px;
+    }
+
+    .qw-admin .admin-carousell-topbar-brand {
+        flex: 1 1 calc(100% - 52px);
+        order: 2;
+    }
+
+    .qw-admin .admin-carousell-topbar .admin-topbar-menu {
+        order: 1;
+    }
+
+    .qw-admin .admin-carousell-topbar-filters {
+        order: 3;
+        width: 100%;
+        padding-top: 8px;
+        border-top: 1px solid var(--line);
+    }
+
+    .qw-admin .admin-carousell-fi--compact {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .qw-admin .admin-carousell-summary {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .qw-admin .admin-carousell-body {
+        padding: 12px 16px 24px;
+    }
+
+    .qw-admin .admin-carousell-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .qw-admin .admin-carousell-table-scroll,
+    .qw-admin .admin-carousell-table-desktop {
+        display: none;
+    }
+
+    .qw-admin .admin-carousell-mobile-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .qw-admin .admin-carousell-mobile-card {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        animation: adminCarousellFadeUp 0.4s both;
+    }
+
+    .qw-admin .admin-carousell-mobile-card:last-child {
+        border-bottom: none;
+    }
+
+    .qw-admin .admin-carousell-mobile-top {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .qw-admin .admin-carousell-mobile-top .admin-carousell-name-cell {
+        flex: 1;
+    }
+
+    .qw-admin .admin-carousell-mobile-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding-left: 18px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    .qw-admin .admin-carousell-mobile-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding-left: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .qw-admin .admin-carousell-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .qw-admin .admin-carousell-form-card {
+        padding: 18px 16px 16px;
     }
 }
