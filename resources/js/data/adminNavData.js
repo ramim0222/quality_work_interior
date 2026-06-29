@@ -15,7 +15,7 @@ export const adminNavSections = [
     {
         label: 'Growth',
         items: [
-            { id: 'tracking', label: 'Tracking', href: '#', icon: 'tracking' },
+            { id: 'tracking', label: 'Tracking', href: '/admin/tracking', icon: 'tracking' },
             { id: 'integrations', label: 'Integrations', href: '#', icon: 'integrations', statusDots: ['ok', 'ok', 'warn'] },
             { id: 'costs', label: 'Cost Management', href: '#', icon: 'costs' },
         ],
