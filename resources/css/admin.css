@@ -3385,3 +3385,368 @@
         display: none;
     }
 }
+
+/* ══════════════════════════════════════
+   Admin Integrations page
+   ══════════════════════════════════════ */
+
+@keyframes adminIntegrationsFadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.qw-admin .admin-integrations-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.qw-admin .admin-integrations-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.qw-admin .admin-integrations-add-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ink);
+    color: var(--text-onDark);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.qw-admin .admin-integrations-add-btn:hover {
+    background: var(--ink-soft);
+    transform: translateY(-1px);
+}
+
+.qw-admin .admin-integrations-pills {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.qw-admin .admin-integrations-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px;
+    animation: adminIntegrationsFadeUp 0.45s both;
+}
+
+.qw-admin .admin-integrations-pill-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.qw-admin .admin-integrations-pill-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+}
+
+.qw-admin .admin-integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.qw-admin .admin-integrations-card {
+    padding: 24px 24px 20px;
+    animation: adminIntegrationsFadeUp 0.5s both;
+}
+
+.qw-admin .admin-integrations-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.qw-admin .admin-integrations-card-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.qw-admin .admin-integrations-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.qw-admin .admin-integrations-card-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.qw-admin .admin-integrations-card-type {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 1px;
+}
+
+.qw-admin .admin-integrations-card-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.qw-admin .admin-integrations-toggle {
+    width: 40px;
+    height: 22px;
+    border-radius: 999px;
+    cursor: pointer;
+    border: none;
+    flex-shrink: 0;
+    position: relative;
+    background: rgba(20, 17, 15, 0.18);
+    transition: background 0.2s;
+}
+
+.qw-admin .admin-integrations-toggle::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.qw-admin .admin-integrations-toggle--on {
+    background: var(--ok);
+}
+
+.qw-admin .admin-integrations-toggle--on::after {
+    transform: translateX(18px);
+}
+
+.qw-admin .admin-integrations-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.qw-admin .admin-integrations-lbl {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.qw-admin .admin-integrations-fi {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text);
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 12px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.qw-admin .admin-integrations-fi:focus {
+    border-color: var(--brass);
+}
+
+.qw-admin .admin-integrations-help {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+    line-height: 1.45;
+}
+
+.qw-admin .admin-integrations-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+}
+
+.qw-admin .admin-integrations-tested-label {
+    font-size: 0.62rem;
+    color: var(--text-muted);
+}
+
+.qw-admin .admin-integrations-tested-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    margin-top: 1px;
+}
+
+.qw-admin .admin-integrations-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.qw-admin .admin-integrations-test-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.qw-admin .admin-integrations-save-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-onDark);
+    background: var(--brass);
+    border: none;
+    border-radius: 7px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.qw-admin .admin-integrations-save-btn:hover {
+    background: var(--brass-deep);
+}
+
+.qw-admin .admin-integrations-note {
+    background: var(--ink);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.qw-admin .admin-integrations-note-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.qw-admin .admin-integrations-note-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-onDark);
+    margin-bottom: 5px;
+}
+
+.qw-admin .admin-integrations-note-text {
+    font-size: 0.78rem;
+    color: rgba(246, 242, 236, 0.5);
+    line-height: 1.65;
+    max-width: 680px;
+}
+
+.qw-admin .admin-integrations-note-code {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--brass);
+    font-size: 0.72rem;
+}
+
+.qw-admin .admin-integrations-note-link {
+    color: var(--brass);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Integrations responsive */
+@media (max-width: 1280px) {
+    .qw-admin .admin-integrations-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .qw-admin .admin-integrations-actions {
+        margin-bottom: 12px;
+    }
+
+    .qw-admin .admin-integrations-add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .qw-admin .admin-integrations-pills {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .qw-admin .admin-integrations-pill {
+        padding: 5px 12px;
+    }
+
+    .qw-admin .admin-integrations-card {
+        padding: 20px 18px 18px;
+    }
+
+    .qw-admin .admin-integrations-card-head {
+        flex-wrap: wrap;
+    }
+
+    .qw-admin .admin-integrations-card-foot {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .qw-admin .admin-integrations-card-actions {
+        width: 100%;
+    }
+
+    .qw-admin .admin-integrations-test-btn,
+    .qw-admin .admin-integrations-save-btn {
+        flex: 1;
+        text-align: center;
+    }
+
+    .qw-admin .admin-integrations-note {
+        padding: 16px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .qw-admin .admin-integrations-pill {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 0;
+    }
+
+    .qw-admin .admin-integrations-pill-name {
+        font-size: 0.72rem;
+    }
+}

@@ -48,6 +48,10 @@ Route::get('/admin/tracking', function () {
     return Inertia::render('Admin/Tracking');
 })->middleware(['auth', 'verified'])->name('admin.tracking');
 
+Route::get('/admin/integrations', function () {
+    return Inertia::render('Admin/Integrations');
+})->middleware(['auth', 'verified'])->name('admin.integrations');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
