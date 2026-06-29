@@ -64,6 +64,10 @@ Route::get('/admin/services', function () {
     return Inertia::render('Admin/Services');
 })->middleware(['auth', 'verified'])->name('admin.services');
 
+Route::get('/admin/settings', function () {
+    return Inertia::render('Admin/Settings');
+})->middleware(['auth', 'verified'])->name('admin.settings');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

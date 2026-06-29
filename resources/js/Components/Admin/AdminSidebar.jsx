@@ -73,7 +73,7 @@ export default function AdminSidebar({ activeNav = 'dashboard', open = false, on
             </nav>
 
             <div className="admin-sidebar-foot">
-                <Link href="#" className="admin-nav-item" onClick={onNavigate}>
+                <Link href="/admin/settings" className={`admin-nav-item${activeNav === 'settings' ? ' active' : ''}`} onClick={onNavigate}>
                     <AdminNavIcon name="settings" />
                     Settings
                 </Link>

@@ -1394,6 +1394,18 @@
     min-height: 0;
 }
 
+.qw-admin .admin-main--settings {
+    min-width: 0;
+}
+
+.qw-admin .admin-content--settings {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    min-height: 0;
+}
+
 /* Leads topbar */
 .qw-admin .admin-leads-topbar {
     height: 64px;
@@ -5299,5 +5311,520 @@
 
     .qw-admin .admin-services-empty {
         min-height: 200px;
+    }
+}
+
+/* ══════════════════════════════════════
+   Admin Settings page
+   ══════════════════════════════════════ */
+
+@keyframes adminSettingsFadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.qw-admin .admin-settings-split {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.qw-admin .admin-settings-tabs {
+    width: 220px;
+    background: #fff;
+    border-right: 1px solid var(--line);
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.qw-admin .admin-settings-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 9px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    transition: background 0.15s, color 0.15s;
+    color: var(--text-muted);
+    animation: adminSettingsFadeUp 0.4s both;
+}
+
+.qw-admin .admin-settings-tab:hover {
+    background: rgba(20, 17, 15, 0.05);
+}
+
+.qw-admin .admin-settings-tab--active {
+    background: var(--paper-2);
+    color: var(--text);
+    font-weight: 600;
+}
+
+.qw-admin .admin-settings-content {
+    flex: 1;
+    overflow-y: auto;
+    background: var(--paper);
+    padding: 24px;
+    -webkit-overflow-scrolling: touch;
+    min-width: 0;
+}
+
+.qw-admin .admin-settings-panel {
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: adminSettingsFadeUp 0.45s both;
+}
+
+.qw-admin .admin-settings-panel--narrow {
+    max-width: 640px;
+}
+
+.qw-admin .admin-settings-panel-head {
+    margin-bottom: 0;
+}
+
+.qw-admin .admin-settings-panel-head--row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.qw-admin .admin-settings-panel-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--text);
+    font-optical-sizing: auto;
+    margin-bottom: 4px;
+}
+
+.qw-admin .admin-settings-panel-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.qw-admin .admin-settings-card {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.qw-admin .admin-settings-card--flush {
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+}
+
+.qw-admin .admin-settings-card--toggles {
+    padding: 20px;
+    gap: 0;
+}
+
+.qw-admin .admin-settings-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.qw-admin .admin-settings-lbl {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.qw-admin .admin-settings-fi {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.83rem;
+    color: var(--text);
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 12px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.qw-admin .admin-settings-fi:focus {
+    border-color: var(--brass);
+}
+
+.qw-admin .admin-settings-fi--mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+}
+
+.qw-admin .admin-settings-fi--sm {
+    font-size: 0.8rem;
+}
+
+.qw-admin .admin-settings-fi--about {
+    min-height: 80px;
+    resize: none;
+    line-height: 1.6;
+}
+
+.qw-admin .admin-settings-fi--role {
+    padding: 4px 8px;
+    font-size: 0.76rem;
+    width: auto;
+    max-width: 100%;
+}
+
+.qw-admin .admin-settings-save-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--brass);
+    color: #FFF8EE;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.qw-admin .admin-settings-save-btn:hover {
+    background: var(--brass-deep);
+    transform: translateY(-1px);
+}
+
+.qw-admin .admin-settings-card-bar {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.qw-admin .admin-settings-card-bar-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.qw-admin .admin-settings-add-chip-btn {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--brass);
+    background: rgba(176, 137, 79, 0.1);
+    border: 1px solid rgba(176, 137, 79, 0.2);
+    border-radius: 7px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.qw-admin .admin-settings-wa-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 36px;
+    gap: 10px;
+    align-items: end;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--line);
+    animation: adminSettingsFadeUp 0.4s both;
+}
+
+.qw-admin .admin-settings-wa-row:last-child {
+    border-bottom: none;
+}
+
+.qw-admin .admin-settings-remove-icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--err);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+.qw-admin .admin-settings-note {
+    background: rgba(176, 137, 79, 0.06);
+    border: 1px solid rgba(176, 137, 79, 0.18);
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+
+.qw-admin .admin-settings-note p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.qw-admin .admin-settings-note code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    background: rgba(176, 137, 79, 0.1);
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+.qw-admin .admin-settings-invite-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-onDark);
+    background: var(--ink);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+.qw-admin .admin-settings-th {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+}
+
+.qw-admin .admin-settings-users-tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px 80px;
+    align-items: center;
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--line);
+    min-height: 48px;
+    transition: background 0.14s;
+    animation: adminSettingsFadeUp 0.4s both;
+}
+
+.qw-admin .admin-settings-users-tr--head {
+    padding: 0 16px;
+    height: 34px;
+    min-height: 34px;
+    background: var(--paper);
+    animation: none;
+}
+
+.qw-admin .admin-settings-users-tr:not(.admin-settings-users-tr--head):hover {
+    background: var(--paper);
+}
+
+.qw-admin .admin-settings-user-cell {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+}
+
+.qw-admin .admin-settings-user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--paper-2);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 0.68rem;
+    color: var(--brass);
+    font-optical-sizing: auto;
+}
+
+.qw-admin .admin-settings-user-name {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.qw-admin .admin-settings-user-email {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.qw-admin .admin-settings-user-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.qw-admin .admin-settings-remove-btn {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--err);
+    background: rgba(178, 58, 58, 0.06);
+    border: 1px solid rgba(178, 58, 58, 0.14);
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.qw-admin .admin-settings-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+
+.qw-admin .admin-settings-email-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.qw-admin .admin-settings-email-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qw-admin .admin-settings-add-dashed-btn {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--brass);
+    background: rgba(176, 137, 79, 0.08);
+    border: 1px dashed rgba(176, 137, 79, 0.3);
+    border-radius: 7px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.qw-admin .admin-settings-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    animation: adminSettingsFadeUp 0.4s both;
+}
+
+.qw-admin .admin-settings-toggle-row:last-child {
+    border-bottom: none;
+}
+
+.qw-admin .admin-settings-toggle-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.qw-admin .admin-settings-toggle-desc {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Settings responsive */
+@media (max-width: 1024px) {
+    .qw-admin .admin-settings-tabs {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .qw-admin .admin-settings-split {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .qw-admin .admin-settings-tabs {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding: 10px 12px;
+        flex-shrink: 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .qw-admin .admin-settings-tab {
+        width: auto;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .qw-admin .admin-settings-content {
+        padding: 18px 16px;
+    }
+
+    .qw-admin .admin-settings-form-row,
+    .qw-admin .admin-settings-wa-row {
+        grid-template-columns: 1fr;
+    }
+
+    .qw-admin .admin-settings-wa-row {
+        align-items: stretch;
+    }
+
+    .qw-admin .admin-settings-remove-icon-btn {
+        margin-bottom: 0;
+        align-self: center;
+    }
+
+    .qw-admin .admin-settings-users-tr {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .qw-admin .admin-settings-users-tr--head {
+        display: none;
+    }
+
+    .qw-admin .admin-settings-user-actions {
+        justify-content: flex-start;
+    }
+
+    .qw-admin .admin-settings-panel-head--row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .qw-admin .admin-settings-invite-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .qw-admin .admin-settings-save-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .qw-admin .admin-settings-toggle-row {
+        flex-wrap: wrap;
     }
 }
