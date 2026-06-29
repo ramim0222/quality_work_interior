@@ -24,7 +24,7 @@ export const adminNavSections = [
         label: 'Content',
         items: [
             { id: 'projects-cms', label: 'Projects CMS', href: '/admin/projects', icon: 'projects' },
-            { id: 'services-cms', label: 'Services CMS', href: '#', icon: 'services' },
+            { id: 'services-cms', label: 'Services CMS', href: '/admin/services', icon: 'services' },
         ],
     },
 ];

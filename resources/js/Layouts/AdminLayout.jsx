@@ -30,6 +30,8 @@ export default function AdminLayout({
     }), [sidebarOpen]);
 
     const isLeadsLayout = layout === 'leads';
+    const isServicesLayout = layout === 'services';
+    const isFullBleedContent = isLeadsLayout || isServicesLayout;
 
     return (
         <AdminLayoutContext.Provider value={layoutContext}>
@@ -54,7 +56,7 @@ export default function AdminLayout({
                         open={sidebarOpen}
                         onNavigate={() => setSidebarOpen(false)}
                     />
-                    <div className={`admin-main${isLeadsLayout ? ' admin-main--leads' : ''}`}>
+                    <div className={`admin-main${isLeadsLayout ? ' admin-main--leads' : ''}${isServicesLayout ? ' admin-main--services' : ''}`}>
                         {!isLeadsLayout && (
                             <AdminTopbar
                                 title={title}
@@ -63,7 +65,7 @@ export default function AdminLayout({
                                 menuOpen={sidebarOpen}
                             />
                         )}
-                        <div className={`admin-content${isLeadsLayout ? ' admin-content--leads' : ''}`}>
+                        <div className={`admin-content${isFullBleedContent ? ` admin-content--${layout}` : ''}`}>
                             {children}
                         </div>
                     </div>

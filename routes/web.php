@@ -60,6 +60,10 @@ Route::get('/admin/projects', function () {
     return Inertia::render('Admin/Projects');
 })->middleware(['auth', 'verified'])->name('admin.projects');
 
+Route::get('/admin/services', function () {
+    return Inertia::render('Admin/Services');
+})->middleware(['auth', 'verified'])->name('admin.services');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
