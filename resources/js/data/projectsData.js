@@ -1,42 +1,63 @@
-export const projectFilters = [
-    { key: 'all', label: 'All' },
-    { key: 'spa', label: 'Spa' },
-    { key: 'ktv', label: 'KTV' },
-    { key: 'retail', label: 'Retail' },
-    { key: 'home', label: 'Home' },
-    { key: 'bathroom', label: 'Bathroom' },
-    { key: 'kitchen', label: 'Kitchen' },
-    { key: 'flooring', label: 'Flooring' },
-    { key: 'painting', label: 'Painting' },
-    { key: 'electrical', label: 'Electrical' },
-    { key: 'plumbing', label: 'Plumbing' },
-    { key: 'roller', label: 'Roller Shutter' },
+export const projectCategoryFilterOptions = [
+    { value: '', label: 'All categories' },
+    { value: 'Bathroom', label: 'Bathroom' },
+    { value: 'Kitchen', label: 'Kitchen' },
+    { value: 'Spa', label: 'Spa' },
+    { value: 'KTV', label: 'KTV' },
+    { value: 'Retail', label: 'Retail' },
 ];
 
-export const projectCatalog = [
-    { id: 1, slug: 'modern-hdb-master-bath', key: 'bathroom', category: 'Bathroom', title: 'Modern HDB Master Bath', location: 'Sengkang', year: '2025', h: 300, bg1: '#8898A8', bg2: '#98A8B8' },
-    { id: 2, slug: 'open-plan-kitchen-remodel', key: 'kitchen', category: 'Kitchen', title: 'Open-Plan Kitchen Remodel', location: 'Tampines', year: '2025', h: 240, bg1: '#A8886A', bg2: '#B49878' },
-    { id: 3, slug: 'wellness-spa-fit-out', key: 'spa', category: 'Spa', title: 'Wellness Spa Full Fit-out', location: 'Orchard', year: '2025', h: 360, bg1: '#C4A882', bg2: '#CEBFA0' },
-    { id: 4, slug: 'fashion-boutique-renovation', key: 'retail', category: 'Retail', title: 'Fashion Boutique Renovation', location: 'ION Orchard', year: '2025', h: 280, bg1: '#B09070', bg2: '#BAA080' },
-    { id: 5, slug: 'ktv-lounge-premium-fit-out', key: 'ktv', category: 'KTV', title: 'KTV Lounge Premium Fit-out', location: 'Jalan Besar', year: '2024', h: 320, bg1: '#8A7060', bg2: '#957B6A' },
-    { id: 6, slug: 'landed-home-extension', key: 'home', category: 'Home', title: 'Landed Home Extension, 2 Rooms', location: 'Punggol', year: '2024', h: 260, bg1: '#A89070', bg2: '#B4A080' },
-    { id: 7, slug: 'full-flat-vinyl-flooring', key: 'flooring', category: 'Flooring', title: 'Full-Flat Vinyl Flooring', location: 'Bishan', year: '2024', h: 220, bg1: '#909898', bg2: '#A0A8A8' },
-    { id: 8, slug: 'condo-ensuite-transformation', key: 'bathroom', category: 'Bathroom', title: 'Condo Ensuite Transformation', location: 'Marina Bay', year: '2024', h: 340, bg1: '#8898A8', bg2: '#9AAABB' },
-    { id: 9, slug: 'full-home-remodel-repaint', key: 'painting', category: 'Painting', title: 'Full-Home Remodel & Repaint', location: 'Clementi', year: '2024', h: 260, bg1: '#C8A880', bg2: '#D4B890' },
-    { id: 10, slug: 'hdb-kitchen-cabinet-overhaul', key: 'kitchen', category: 'Kitchen', title: 'HDB Kitchen — Cabinet Overhaul', location: 'Woodlands', year: '2024', h: 300, bg1: '#A8886A', bg2: '#B29070' },
-    { id: 11, slug: 'commercial-rewiring-db-upgrade', key: 'electrical', category: 'Electrical', title: 'Commercial Rewiring & DB Upgrade', location: 'Toa Payoh', year: '2024', h: 220, bg1: '#707888', bg2: '#808898' },
-    { id: 12, slug: 'nail-spa-boutique-fit-out', key: 'spa', category: 'Spa', title: 'Nail Spa Boutique Fit-out', location: 'Bugis', year: '2024', h: 300, bg1: '#C4A882', bg2: '#CCBA96' },
-    { id: 13, slug: 'room-addition-converted-study', key: 'home', category: 'Home', title: 'Room Addition — Converted Study', location: 'Sengkang', year: '2023', h: 240, bg1: '#A89070', bg2: '#B8A080' },
-    { id: 14, slug: 'roller-shutter-shophouse', key: 'roller', category: 'Roller Shutter', title: 'Roller Shutter — 3-Unit Shophouse', location: 'Little India', year: '2023', h: 200, bg1: '#887870', bg2: '#988880' },
-    { id: 15, slug: 'fnb-cafe-interior-fit-out', key: 'retail', category: 'Retail', title: 'F&B Café Interior Fit-out', location: 'Tanjong Pagar', year: '2023', h: 340, bg1: '#B09070', bg2: '#C0A080' },
-    { id: 16, slug: 'terraced-house-three-bathrooms', key: 'bathroom', category: 'Bathroom', title: 'Terraced House — 3 Bathrooms', location: 'Hougang', year: '2023', h: 280, bg1: '#8898A8', bg2: '#9AA8B8' },
-    { id: 17, slug: 'full-plumbing-repipe-hdb', key: 'plumbing', category: 'Plumbing', title: 'Full Plumbing Re-pipe — HDB 5-rm', location: 'Jurong West', year: '2023', h: 220, bg1: '#7898A0', bg2: '#88A8B0' },
-    { id: 18, slug: 'office-vinyl-flooring-3000sqft', key: 'flooring', category: 'Flooring', title: 'Office Vinyl Flooring — 3,000 sqft', location: 'CBD', year: '2023', h: 300, bg1: '#909898', bg2: '#A0A8A8' },
+export const projectServiceCategories = [
+    'Bathroom Renovation',
+    'Kitchen Renovation',
+    'Spa Centre Renovation',
+    'KTV Renovation',
+    'Retail Shop Renovation',
+    'Home Extension',
+    'Ceiling & Vinyl Flooring',
+    'Remodels & Paintings',
+    'Hacking & Reinstatement',
+    'Electrical Maintenance',
+    'General Plumbing',
+    'Roller Shutter Repair',
 ];
 
-export const PROJECTS_PAGE_SIZE = 9;
+export const projectGallerySlots = ['img 1', 'img 2', 'img 3', 'img 4'];
 
-export function filterProjects(activeFilter) {
-    if (activeFilter === 'all') return projectCatalog;
-    return projectCatalog.filter((p) => p.key === activeFilter);
+export const emptyProject = {
+    id: null,
+    title: '',
+    slug: '',
+    category: 'Bathroom Renovation',
+    location: '',
+    year: '2025',
+    summary: '',
+    body: '',
+    published: true,
+    bg1: '#8898A8',
+    bg2: '#98A8B8',
+};
+
+export const initialProjects = [
+    { id: 1, title: 'Modern HDB Master Bath', slug: 'modern-hdb-master-bath', category: 'Bathroom Renovation', year: '2025', published: true, location: 'Sengkang, Singapore', summary: 'A complete master bathroom transformation with modern fixtures.', bg1: '#8898A8', bg2: '#98A8B8' },
+    { id: 2, title: 'Open-Plan Kitchen Remodel', slug: 'open-plan-kitchen-remodel', category: 'Kitchen Renovation', year: '2025', published: true, location: 'Tampines, Singapore', summary: 'Open-plan kitchen with custom cabinetry and quartz countertops.', bg1: '#A8886A', bg2: '#B49878' },
+    { id: 3, title: 'Wellness Spa Full Fit-out', slug: 'wellness-spa-fit-out', category: 'Spa Centre Renovation', year: '2025', published: true, location: 'Orchard, Singapore', summary: 'Full spa centre renovation with treatment rooms and reception.', bg1: '#C4A882', bg2: '#CEBFA0' },
+    { id: 4, title: 'Fashion Boutique Renovation', slug: 'fashion-boutique-renovation', category: 'Retail Renovation', year: '2025', published: true, location: 'Bugis, Singapore', summary: 'Retail boutique fit-out with display lighting and fitting rooms.', bg1: '#B09070', bg2: '#BAA080' },
+    { id: 5, title: 'KTV Lounge Premium Fit-out', slug: 'ktv-lounge-premium-fit-out', category: 'KTV Renovation', year: '2024', published: true, location: 'Clarke Quay, Singapore', summary: 'Premium KTV lounge with acoustic treatment and VIP rooms.', bg1: '#8A7060', bg2: '#957B6A' },
+    { id: 6, title: 'Landed Home Extension — 2 Rooms', slug: 'landed-home-extension', category: 'Home Extension', year: '2024', published: true, location: 'Serangoon, Singapore', summary: 'Two-room extension with structural works and full finishing.', bg1: '#A89070', bg2: '#B4A080' },
+    { id: 7, title: 'Full-Flat Vinyl Flooring', slug: 'full-flat-vinyl-flooring', category: 'Ceiling & Vinyl', year: '2024', published: false, location: 'Jurong West, Singapore', summary: 'Complete vinyl flooring replacement across a 4-room HDB flat.', bg1: '#909898', bg2: '#A0A8A8' },
+    { id: 8, title: 'Condo Ensuite Transformation', slug: 'condo-ensuite-transformation', category: 'Bathroom Renovation', year: '2024', published: true, location: 'River Valley, Singapore', summary: 'Luxury ensuite upgrade with rain shower and heated floors.', bg1: '#8898A8', bg2: '#9AAABB' },
+    { id: 9, title: 'Full-Home Remodel & Repaint', slug: 'full-home-remodel-repaint', category: 'Remodels & Paintings', year: '2024', published: true, location: 'Bishan, Singapore', summary: 'Whole-home repaint and minor remodel across living areas.', bg1: '#C8A880', bg2: '#D4B890' },
+    { id: 10, title: 'HDB Kitchen Cabinet Overhaul', slug: 'hdb-kitchen-cabinet-overhaul', category: 'Kitchen Renovation', year: '2024', published: false, location: 'Woodlands, Singapore', summary: 'Custom cabinet replacement with soft-close hardware.', bg1: '#A8886A', bg2: '#B29070' },
+];
+
+export function matchesCategoryFilter(category, filter) {
+    if (!filter) return true;
+    return category.toLowerCase().includes(filter.toLowerCase());
+}
+
+export function matchesSearch(project, query) {
+    if (!query.trim()) return true;
+    const q = query.trim().toLowerCase();
+    return project.title.toLowerCase().includes(q) || project.slug.toLowerCase().includes(q);
 }
